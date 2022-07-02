@@ -1,8 +1,10 @@
 extends KinematicBody2D
 
-var motion = Vector2.ZERO
 const ACCELERATION = 2000
 const MAX_SPEED = 100
+
+var motion = Vector2.ZERO
+var health = 100
 
 func _physics_process(delta):
 	var axis = get_input_axis()
@@ -15,6 +17,9 @@ func _physics_process(delta):
 	else:
 		apply_movement(axis * ACCELERATION * delta)
 	motion = move_and_slide(motion)
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		print("Collision with: ", collision.collider.name)
 	
 func get_input_axis():
 	var axis = Vector2.ZERO
@@ -31,3 +36,6 @@ func apply_friction(amount):
 func apply_movement(acceleration):
 	motion += acceleration
 	motion = motion.clamped(MAX_SPEED)
+
+func _process(delta):
+	$Health/CC/PB.value = health
