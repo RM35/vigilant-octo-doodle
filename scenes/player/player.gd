@@ -2,14 +2,14 @@ extends KinematicBody2D
 
 var motion = Vector2.ZERO
 const ACCELERATION = 2000
-const MAX_SPEED = 500
+const MAX_SPEED = 100
 
 func _physics_process(delta):
 	var axis = get_input_axis()
 	if axis.x < 0:
-		$Sprite3.set_scale(Vector2(-1,1))
+		$Sprite.set_scale(Vector2(-1,1))
 	if axis.x > 0:
-		$Sprite3.set_scale(Vector2(1,1))
+		$Sprite.set_scale(Vector2(1,1))
 	if axis == Vector2.ZERO:
 		apply_friction(ACCELERATION * delta)
 	else:

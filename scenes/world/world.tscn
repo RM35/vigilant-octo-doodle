@@ -29,4 +29,3 @@ format = 1
 script = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-script = null
