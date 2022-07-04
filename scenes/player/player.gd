@@ -17,10 +17,8 @@ func _physics_process(delta):
 	else:
 		apply_movement(axis * ACCELERATION * delta)
 	motion = move_and_slide(motion)
-	for i in get_slide_count():
-		var collision = get_slide_collision(i)
-		print("Collision with: ", collision.collider.name)
-	
+	handle_collisions()
+
 func get_input_axis():
 	var axis = Vector2.ZERO
 	axis.x = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))
@@ -39,3 +37,8 @@ func apply_movement(acceleration):
 
 func _process(delta):
 	$Health/CC/PB.value = health
+
+func handle_collisions():
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		print("Collision with: ", collision.collider.name)
