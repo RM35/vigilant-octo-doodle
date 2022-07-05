@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 class_name enemy
 
-onready var player = get_node("../Player")
+onready var player = get_node("../../Player")
 export var u_data: Resource = load("res://scenes/enemy/enemy_data/carrot.tres")
 var velocity = Vector2.ZERO
 var knock_back = false
