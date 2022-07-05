@@ -18,9 +18,10 @@ func get_api_from_env():
 func get_data():
 	var http = HTTPRequest.new()
 	add_child(http)
+	var body := {"fields": {"name": {"stringValue": ""},"Age": {"integerValue": "23"}}}
 	var header := ["Authorization: Bearer " + FIREBASE_TOKEN]
 	http.connect("request_completed", self, "response_data")
-	http.request("https://firestore.googleapis.com/v1/projects/vigilante-doodle/databases/(default)/documents/scores", header, false, HTTPClient.METHOD_GET)
+	http.request("https://firestore.googleapis.com/v1/projects/vigilante-doodle/databases/(default)/documents/scores", header, false, HTTPClient.METHOD_POST, to_json(body))
 	
 	
 func get_token():

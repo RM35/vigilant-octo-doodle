@@ -1,18 +1,18 @@
 extends KinematicBody2D
 
-const SPEED = 35
-const KNOCKBACK_AMOUNT = -20
-
 onready var player = get_node("../Player")
+var u_data: Resource = load("res://scenes/enemy/enemy_data/carrot.tres")
 var velocity = Vector2.ZERO
 var knock_back = false
-var knockbackable = true
+
+func _ready():
+	$Sprite.texture = u_data.texture
 
 func _physics_process(delta):
 	velocity = Vector2.ZERO
-	velocity = global_position.direction_to(player.position) * SPEED
-	if knock_back && knockbackable:
-		move_and_slide(KNOCKBACK_AMOUNT * velocity)
+	velocity = global_position.direction_to(player.position) * u_data.speed
+	if knock_back && u_data.knockbackable:
+		move_and_slide(u_data.knockback_amount * velocity)
 		knock_back = false
 	else:
 		move_and_slide(velocity)

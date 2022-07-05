@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Resource",
+"class": "enemy_stats",
+"language": "GDScript",
+"path": "res://scenes/enemy/enemy_stats.gd"
+} ]
+_global_script_class_icons={
+"enemy_stats": ""
+}
+
 [application]
 
 config/name="banana_regulation"
