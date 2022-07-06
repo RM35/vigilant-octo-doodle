@@ -41,4 +41,3 @@ func _process(delta):
 func handle_collisions():
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
-		print("Collision with: ", collision.collider.name)
