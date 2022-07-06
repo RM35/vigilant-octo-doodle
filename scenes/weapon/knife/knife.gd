@@ -6,6 +6,7 @@ var speed = 300
 var origin_vector_global = Vector2.ZERO
 var last_dir = Vector2.RIGHT
 var player_prev_pos = Vector2.ZERO
+var damage = 10
 
 func _ready():
 	player_prev_pos = player.global_position

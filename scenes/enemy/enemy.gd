@@ -28,3 +28,10 @@ func _physics_process(delta):
 func handle_collisions():
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
+
+func take_damage(amount):
+	u_data.health -= amount
+	if u_data.health <= 0:
+		pass #We are dead
+	
+	
