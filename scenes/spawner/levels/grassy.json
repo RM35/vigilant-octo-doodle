@@ -1,0 +1,15 @@
+[
+    {
+        "start": 5,
+        "type": "recurring",
+        "enemy": "carrot.tres",
+        "duration": 60,
+        "delay": 1
+    },
+    {
+        "start": 10,
+        "type": "oneshot",
+        "enemy": "ghost.tres",
+        "amount": 10
+    }
+]

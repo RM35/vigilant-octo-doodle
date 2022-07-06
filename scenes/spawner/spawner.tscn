@@ -9,3 +9,8 @@ script = ExtResource( 1 )
 points = PoolVector2Array( 228, 88 )
 width = 2.0
 default_color = Color( 0, 0, 0, 0.905882 )
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

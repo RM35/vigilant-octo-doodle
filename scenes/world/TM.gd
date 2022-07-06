@@ -4,6 +4,9 @@ const x_view = 40
 const y_view = 24
 onready var player = get_node("../Player")
 
+func _ready():
+	pass
+	
 func _process(delta):
 	render_tiles()
 
