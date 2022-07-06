@@ -24,6 +24,7 @@ func _physics_process(delta):
 		move_and_slide(velocity)
 		handle_collisions()
 
+#Body collisions only
 func handle_collisions():
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
