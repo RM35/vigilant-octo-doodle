@@ -29,9 +29,17 @@ func handle_collisions():
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
 
+#Let the tween time regulate the rate damage taken
 func take_damage(amount):
-	u_data.health -= amount
-	if u_data.health <= 0:
-		pass #We are dead
-	
-	
+	if !$FlashDamage.is_active():
+		$AudioStreamPlayer2D.play()
+		u_data.health -= amount
+		if u_data.health <= 0:
+			pass #We are dead
+		knock_back = true
+		var start_modulate = $Sprite.modulate
+		$FlashDamage.interpolate_property($Sprite, "modulate", $Sprite.modulate, Color(0, 0, 0), 0.05, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+		$FlashDamage.start()
+		yield($FlashDamage, "tween_completed")
+		$FlashDamage.interpolate_property($Sprite, "modulate", Color(0, 0, 0), start_modulate, 0.05, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+		$FlashDamage.start()
