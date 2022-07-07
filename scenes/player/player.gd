@@ -57,7 +57,7 @@ func _on_PBXP_changed():
 	if xp >= 100:
 		level_up()
 		xp = 0
-
+		
 func _on_PBHP_changed():
 	if health <= 0:
 		end_level()

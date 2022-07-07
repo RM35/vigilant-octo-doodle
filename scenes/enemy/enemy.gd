@@ -8,7 +8,7 @@ var velocity = Vector2.ZERO
 var knock_back = false
 
 func _ready():
-	set_enemy_type("res://scenes/enemy/enemy_data/carrot.tres")
+	pass
 
 func set_enemy_type(unit_data: String):
 	u_data = load(unit_data)
@@ -23,11 +23,18 @@ func _physics_process(delta):
 	else:
 		move_and_slide(velocity)
 		handle_collisions()
-
+	
+	$Line2D.clear_points()
+	$Line2D.add_point(Vector2(0, 0))
+	$Line2D.add_point(velocity)
+	
 #Body collisions only
 func handle_collisions():
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
+		var body = collision.get_collider()
+		if body.is_in_group("enemy"):
+			pass
 
 #Let the tween time regulate the rate damage taken
 func take_damage(amount):

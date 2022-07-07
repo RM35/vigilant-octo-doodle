@@ -2,8 +2,22 @@
     {
         "start": 0,
         "type": "recurring",
-        "enemy": "carrot.tres",
-        "duration": 60,
+        "enemy": "dan.tres",
+        "duration": 600,
         "delay": 1
+    },
+    {
+        "start": 3,
+        "type": "recurring",
+        "enemy": "ghost.tres",
+        "duration": 600,
+        "delay": 5
+    },
+    {
+        "start": 3,
+        "type": "recurring",
+        "enemy": "sword.tres",
+        "duration": 600,
+        "delay": 2
     }
 ]
