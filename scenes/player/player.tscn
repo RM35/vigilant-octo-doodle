@@ -40,7 +40,7 @@ margin_top = -2.5
 margin_right = 17.5
 margin_bottom = 2.5
 
-[node name="PB" type="ProgressBar" parent="Health/CC"]
+[node name="PBHP" type="ProgressBar" parent="Health/CC"]
 margin_right = 35.0
 margin_bottom = 5.0
 grow_horizontal = 2
@@ -54,8 +54,8 @@ percent_visible = false
 [node name="XP" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 20.0
-margin_bottom = 20.0
+margin_top = 25.0
+margin_bottom = 25.0
 
 [node name="CC" type="CenterContainer" parent="XP"]
 anchor_left = 0.5
@@ -67,10 +67,9 @@ margin_top = -2.5
 margin_right = 17.5
 margin_bottom = 2.5
 
-[node name="PB" type="ProgressBar" parent="XP/CC"]
-margin_top = 5.0
+[node name="PBXP" type="ProgressBar" parent="XP/CC"]
 margin_right = 35.0
-margin_bottom = 10.0
+margin_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 35, 5 )
@@ -82,3 +81,6 @@ percent_visible = false
 [node name="Weapons" type="Node2D" parent="."]
 
 [node name="Knife" parent="." instance=ExtResource( 4 )]
+
+[connection signal="changed" from="Health/CC/PBHP" to="." method="_on_PBHP_changed"]
+[connection signal="changed" from="XP/CC/PBXP" to="." method="_on_PBXP_changed"]

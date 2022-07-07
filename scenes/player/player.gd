@@ -5,6 +5,7 @@ const MAX_SPEED = 100
 
 var motion = Vector2.ZERO
 var health = 100
+var xp = 0
 
 func _physics_process(delta):
 	var axis = get_input_axis()
@@ -36,8 +37,27 @@ func apply_movement(acceleration):
 	motion = motion.clamped(MAX_SPEED)
 
 func _process(delta):
-	$Health/CC/PB.value = health
+	$Health/CC/PBHP.value = health
+	$XP/CC/PBXP.value = xp
 
 func handle_collisions():
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
+		var body = collision.get_collider()
+		if body.is_in_group("enemy"):
+			health -= 1
+
+func level_up():
+	print("levelled up")
+
+func end_level():
+	print(end_level())
+	
+func _on_PBXP_changed():
+	if xp >= 100:
+		level_up()
+		xp = 0
+
+func _on_PBHP_changed():
+	if health <= 0:
+		end_level()
