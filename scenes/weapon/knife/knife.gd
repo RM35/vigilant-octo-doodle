@@ -7,7 +7,7 @@ extends Node2D
 
 onready var player = get_parent()
 var dir: Vector2 = Vector2.RIGHT
-var speed = 150
+var speed = 450
 var origin_vector_global = Vector2.ZERO
 var last_dir = Vector2.RIGHT
 var player_prev_pos = Vector2.ZERO

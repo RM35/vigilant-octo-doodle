@@ -1,10 +1,9 @@
 [
     {
-        "start": 5,
+        "start": 0,
         "type": "recurring",
         "enemy": "carrot.tres",
         "duration": 60,
-        "delay": 5
+        "delay": 1
     }
-
 ]
