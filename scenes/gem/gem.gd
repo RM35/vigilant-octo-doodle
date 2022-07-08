@@ -1,11 +1,11 @@
 extends Node2D
 
-onready var player = get_node("../Player")
+onready var player = get_node("../../Player")
 var xp = 10
-var speed = 100
+var speed = 200
 
 func _process(delta):
-	if global_position.distance_to(player.global_position) <= 200:
+	if global_position.distance_to(player.global_position) <= 50:
 		var dir = global_position.direction_to(player.global_position)
 		global_position = global_position  + (dir * speed * delta)
 		

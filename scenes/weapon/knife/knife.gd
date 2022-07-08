@@ -5,13 +5,15 @@ extends Node2D
 # and reset its location and direction. This means that the rate of fire is
 # not only time based but as a function of the players movement + time
 
-onready var player = get_parent()
+onready var player = get_parent().get_parent()
 var dir: Vector2 = Vector2.RIGHT
-var speed = 450
 var origin_vector_global = Vector2.ZERO
 var last_dir = Vector2.RIGHT
 var player_prev_pos = Vector2.ZERO
-var damage = 10
+
+# Upgradable
+var damage = 5
+var speed = 200
 
 func _ready():
 	player_prev_pos = player.global_position
