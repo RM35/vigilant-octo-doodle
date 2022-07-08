@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/world/TM.gd" type="Script" id=1]
 [ext_resource path="res://scenes/world/textures/grass.png" type="Texture" id=2]
 [ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/hud/hud.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/gem/gem.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/spawner/spawner.tscn" type="PackedScene" id=7]
 
 [sub_resource type="TileSet" id=1]
@@ -36,3 +37,6 @@ position = Vector2( 402, 167 )
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
 [node name="Spawner" parent="." instance=ExtResource( 7 )]
+
+[node name="Gem" parent="." instance=ExtResource( 5 )]
+position = Vector2( 316, 172 )

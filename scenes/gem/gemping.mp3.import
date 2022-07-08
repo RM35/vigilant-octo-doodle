@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/gemping.mp3-d548aea9baaf1b0a574cc570a712319d.mp3str"
+
+[deps]
+
+source_file="res://scenes/gem/gemping.mp3"
+dest_files=[ "res://.import/gemping.mp3-d548aea9baaf1b0a574cc570a712319d.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

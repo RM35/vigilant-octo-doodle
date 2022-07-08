@@ -61,3 +61,6 @@ func _on_PBXP_changed():
 func _on_PBHP_changed():
 	if health <= 0:
 		end_level()
+
+func collect_gem(xp_amount):
+	xp += xp_amount
