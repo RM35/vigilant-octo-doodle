@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/player/texture/player.png" type="Texture" id=1]
 [ext_resource path="res://scenes/player/player.gd" type="Script" id=2]
 [ext_resource path="res://scenes/player/hpbar_theme.tres" type="Theme" id=3]
 [ext_resource path="res://scenes/weapon/knife/knife.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/player/xpbar_theme.tres" type="Theme" id=5]
+[ext_resource path="res://scenes/gem/shuriken.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 9.0
@@ -81,7 +82,13 @@ percent_visible = false
 
 [node name="Weapons" type="Node2D" parent="."]
 
-[node name="Knife" parent="." instance=ExtResource( 4 )]
+[node name="Knives" type="Node2D" parent="."]
+
+[node name="Knife" parent="Knives" instance=ExtResource( 4 )]
+
+[node name="Shurikens" type="Node2D" parent="."]
+
+[node name="Shuriken" parent="Shurikens" instance=ExtResource( 6 )]
 
 [connection signal="changed" from="Health/CC/PBHP" to="." method="_on_PBHP_changed"]
 [connection signal="changed" from="XP/CC/PBXP" to="." method="_on_PBXP_changed"]

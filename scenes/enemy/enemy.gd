@@ -4,6 +4,7 @@ class_name enemy
 
 onready var player = get_node("../../Player")
 export var u_data: Resource = load("res://scenes/enemy/enemy_data/carrot.tres")
+onready var gem = load("res://scenes/gem/gem.tscn")
 var velocity = Vector2.ZERO
 var knock_back = false
 
@@ -36,13 +37,20 @@ func handle_collisions():
 		if body.is_in_group("enemy"):
 			pass
 
+func dead():
+	var new_gem = gem.instance()
+	new_gem.global_position = global_position
+	get_parent().add_child(new_gem)
+	yield($AudioStreamPlayer2D, "finished")
+	queue_free()
+	
 #Let the tween time regulate the rate damage taken
 func take_damage(amount):
 	if !$FlashDamage.is_active():
-		$AudioStreamPlayer2D.play()
 		u_data.health -= amount
 		if u_data.health <= 0:
-			pass #We are dead
+			dead()
+		$AudioStreamPlayer2D.play()
 		knock_back = true
 		var start_modulate = $Sprite.modulate
 		$FlashDamage.interpolate_property($Sprite, "modulate", $Sprite.modulate, Color(0, 0, 0), 0.05, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
