@@ -3,8 +3,8 @@ extends Node2D
 onready var player = get_parent().get_parent()
 
 # Upgradable
-var damage = 5
-var rot_speed = 1
+var damage = 100
+var rot_speed = 2
 var spin_range = 50
 
 func _process(delta):

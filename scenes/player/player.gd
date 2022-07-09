@@ -6,7 +6,16 @@ const MAX_SPEED = 100
 var motion = Vector2.ZERO
 var health = 100
 var xp = 0
+var player_level = 0
+var xp_growth_rate = 100
+onready var xp_to_level = calc_xp_to_lvl()
 
+func _ready():
+	pass
+	
+func calc_xp_to_lvl():
+	return 100 + (pow((player_level / 2), 2) * xp_growth_rate)
+	
 func _physics_process(delta):
 	var axis = get_input_axis()
 	if axis.x < 0:
@@ -48,9 +57,14 @@ func handle_collisions():
 			health -= 1
 
 func level_up():
+	xp = 0
+	player_level += 1
+	xp_to_level = calc_xp_to_lvl()
+	$XP/CC/PBXP.max_value = xp_to_level
 	$LevelUp.visible = true
 	$LevelUp.roll_upgrades()
 	get_tree().paused = true
+	
 
 func end_level():
 	print(end_level())
@@ -61,6 +75,5 @@ func _on_PBHP_changed():
 
 func collect_gem(xp_amount):
 	xp += xp_amount
-	if xp >= 100:
+	if xp >= xp_to_level:
 		level_up()
-		xp = 0

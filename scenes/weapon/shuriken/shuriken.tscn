@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/weapon/shuriken/shuriken.png" type="Texture" id=1]
-[ext_resource path="res://scenes/gem/shuriken.gd" type="Script" id=2]
+[ext_resource path="res://scenes/weapon/shuriken/shuriken.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 5.0
@@ -21,7 +21,7 @@ update_rotation = false
 update_scale = false
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 80, 0 )
+position = Vector2( 50, 0 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 1 )
 
