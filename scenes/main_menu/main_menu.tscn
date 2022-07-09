@@ -12,10 +12,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="VB" type="VBoxContainer" parent="CC"]
-margin_left = 700.0
-margin_top = 575.0
-margin_right = 900.0
-margin_bottom = 625.0
+margin_left = 540.0
+margin_top = 320.0
+margin_right = 740.0
+margin_bottom = 400.0
 custom_constants/separation = 10
 
 [node name="Play" type="Button" parent="CC/VB"]
@@ -26,14 +26,21 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "PLAY"
 
-[node name="Quit" type="Button" parent="CC/VB"]
+[node name="OptionButton" type="OptionButton" parent="CC/VB"]
 margin_top = 30.0
 margin_right = 200.0
 margin_bottom = 50.0
+text = "Item 0"
+
+[node name="Quit" type="Button" parent="CC/VB"]
+margin_top = 60.0
+margin_right = 200.0
+margin_bottom = 80.0
 rect_min_size = Vector2( 200, 0 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "QUIT"
 
 [connection signal="pressed" from="CC/VB/Play" to="." method="_on_Play_pressed"]
+[connection signal="item_selected" from="CC/VB/OptionButton" to="." method="_on_OptionButton_item_selected"]
 [connection signal="pressed" from="CC/VB/Quit" to="." method="_on_Quit_pressed"]

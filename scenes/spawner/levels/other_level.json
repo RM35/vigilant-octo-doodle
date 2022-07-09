@@ -1,0 +1,9 @@
+[
+    {
+        "start": 0,
+        "type": "recurring",
+        "enemy": "slime.tres",
+        "duration": 600,
+        "delay": 1
+    }
+]

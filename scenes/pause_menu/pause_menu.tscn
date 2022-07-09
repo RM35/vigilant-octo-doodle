@@ -11,6 +11,7 @@ pause_mode = 2
 script = ExtResource( 2 )
 
 [node name="MC" type="MarginContainer" parent="."]
+visible = false
 margin_right = 179.0
 margin_bottom = 720.0
 custom_constants/margin_right = 50

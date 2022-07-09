@@ -6,7 +6,6 @@ onready var player = get_node("../Player")
 var rng = RandomNumberGenerator.new()
 var elapsed_time: int = 0
 
-export(String) var level_path = "res://scenes/spawner/levels/grassy.json"
 var level = []
 var level_stage = 0
 
@@ -18,7 +17,10 @@ func get_new_global_spawn_pos():
 	return (random_direction * 100) + player.global_position
 	
 func _ready():
-	load_level(level_path)
+	load_level("res://scenes/spawner/levels/" + 
+				GlobalData.selected_level)
+	print("res://scenes/spawner/levels/" + 
+				GlobalData.selected_level)
 
 func load_level(json_path):
 	var file = File.new()

@@ -48,15 +48,12 @@ func handle_collisions():
 			health -= 1
 
 func level_up():
-	print("levelled up")
+	$LevelUp.visible = true
+	$LevelUp.roll_upgrades()
+	get_tree().paused = true
 
 func end_level():
 	print(end_level())
-	
-func _on_PBXP_changed():
-	if xp >= 100:
-		level_up()
-		xp = 0
 		
 func _on_PBHP_changed():
 	if health <= 0:
@@ -64,3 +61,6 @@ func _on_PBHP_changed():
 
 func collect_gem(xp_amount):
 	xp += xp_amount
+	if xp >= 100:
+		level_up()
+		xp = 0
