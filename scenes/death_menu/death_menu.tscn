@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://global_resources/basic_panel.tres" type="StyleBox" id=1]
+[ext_resource path="res://Scenes/death_menu/death_menu.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/firebase/firebase.tscn" type="PackedScene" id=3]
+[ext_resource path="res://global_resources/Poppins-Black.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 4 )
+
+[node name="DeathMenu" type="CanvasLayer"]
+pause_mode = 2
+layer = 0
+script = ExtResource( 2 )
+
+[node name="P" type="Panel" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VB" type="VBoxContainer" parent="P"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -147.0
+margin_right = 147.0
+margin_bottom = 184.0
+custom_constants/separation = 20
+
+[node name="Spacer" type="Control" parent="P/VB"]
+margin_right = 294.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="MainMenu" type="Button" parent="P/VB"]
+margin_top = 40.0
+margin_right = 294.0
+margin_bottom = 69.0
+custom_fonts/font = SubResource( 1 )
+text = "Return to Main Menu"
+
+[node name="SendScore" type="Button" parent="P/VB"]
+margin_top = 89.0
+margin_right = 294.0
+margin_bottom = 118.0
+custom_fonts/font = SubResource( 1 )
+disabled = true
+text = "Waiting for id_token"
+
+[node name="Name" type="LineEdit" parent="P/VB"]
+margin_top = 138.0
+margin_right = 294.0
+margin_bottom = 171.0
+custom_fonts/font = SubResource( 1 )
+align = 1
+max_length = 3
+placeholder_text = "Enter Name (3 Characters Max)"
+placeholder_alpha = 0.389
+
+[node name="Score" type="Label" parent="P/VB"]
+margin_top = 191.0
+margin_right = 294.0
+margin_bottom = 220.0
+custom_fonts/font = SubResource( 2 )
+custom_styles/normal = ExtResource( 1 )
+text = "YOUR SCORE: 222"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Hiscores" type="Label" parent="P/VB"]
+margin_top = 240.0
+margin_right = 294.0
+margin_bottom = 260.0
+custom_styles/normal = ExtResource( 1 )
+text = "LOADING HISCORES..."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Firebase" parent="." instance=ExtResource( 3 )]
+
+[connection signal="pressed" from="P/VB/MainMenu" to="." method="_on_MainMenu_pressed"]
+[connection signal="pressed" from="P/VB/SendScore" to="Firebase" method="_on_SendScore_pressed"]

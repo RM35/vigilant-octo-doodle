@@ -1,8 +1,8 @@
-extends Control
+extends CanvasLayer
 
 onready var player = get_parent()
-onready var knife_scn = load("res://scenes/weapon/knife/knife.tscn")
-onready var shuriken_scn = load("res://scenes/weapon/shuriken/shuriken.tscn")
+onready var knife_controller = get_node("../Knives")
+onready var shuriken_controller = get_node("../Shurikens")
 
 var upgrade: int
 var upgrades: Array = ["+1 Knife", "+1 Shuriken",
@@ -33,28 +33,22 @@ func _on_O3_pressed():
 func do_upgrade(which: int):
 	match choice[which]:
 		"+1 Knife":
-			var newknife = knife_scn.instance()
-			player.get_node("Knives").add_child(newknife)
+			knife_controller.add_knife()
 		"+1 Shuriken":
-			var newshuriken = shuriken_scn.instance()
-			player.get_node("Shurikens").add_child(newshuriken)
+			shuriken_controller.add_shuriken()
 		"Refill HP":
 			player.health = 100
 		"+ Knife Speed":
-			for knife in player.get_node("Knives").get_children():
-				knife.speed *= 1.05
+			knife_controller.change_speed(1.05)
 		"+ Knife Damage":
-			for knife in player.get_node("Knives").get_children():
-				knife.damage *= 1.02
+			knife_controller.change_damage(1.05)
 		"+ Shuriken Damage":
-			for shur in player.get_node("Shurikens").get_children():
-				shur.damage *= 1.02
+			shuriken_controller.change_damage(1.05)
 		"+ Shuriken Spin Speed":
-			for shur in player.get_node("Shurikens").get_children():
-				shur.rot_speed *= 1.02
+			shuriken_controller.change_rot_speed(1.05)
 		"+ Shuriken Spin Range":
-			for shur in player.get_node("Shurikens").get_children():
-				shur.spin_range *= 1.02
+			shuriken_controller.change_spin_range(1.05)
 		
-	visible = false
+	$MC.visible = false
 	get_tree().paused = false
+	

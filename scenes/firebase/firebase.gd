@@ -3,43 +3,95 @@ extends Node
 var API_KEY
 var FIREBASE_TOKEN
 var REFRESH_TOKEN
+const base_url = "https://firestore.googleapis.com/v1/projects/vigilante-doodle/databases/(default)/documents/"
 
-func _ready():
+#Get Hiscores Label
+onready var hi = get_node("../P/VB/Hiscores")
+onready var send = get_node("../P/VB/SendScore")
+onready var username = get_node("../P/VB/Name")
+onready var score_label = get_node("../P/VB/Score")
+onready var hs = get_node("../P/VB/Hiscores")
+
+
+func run_end_screen():
+	score_label.text = "SCORE: " + str(GlobalData.score)
 	get_api_from_env()
 	get_token()
-	
+
 func get_api_from_env():
 	var file = File.new()
 	file.open("env.json", File.READ)
 	var env = parse_json(file.get_as_text())
 	API_KEY = env['firestore_api']
 	file.close()
-	
-func get_data():
-	var http = HTTPRequest.new()
-	add_child(http)
-	var body := {"fields": {"name": {"stringValue": ""},"Age": {"integerValue": "23"}}}
-	var header := ["Authorization: Bearer " + FIREBASE_TOKEN]
-	http.connect("request_completed", self, "response_data")
-	http.request("https://firestore.googleapis.com/v1/projects/vigilante-doodle/databases/(default)/documents/scores", header, false, HTTPClient.METHOD_POST, to_json(body))
-	
-	
+
 func get_token():
 	var http = HTTPRequest.new()
 	add_child(http)
 	var body := {"returnSecureToken": true }
-	http.connect("request_completed", self, "response_token")
+	http.connect("request_completed", self, "get_token_response")
 	http.request("https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" + API_KEY, [], false, HTTPClient.METHOD_POST, to_json(body))
 	
+func send_score():
+	var http = HTTPRequest.new()
+	add_child(http)
 	
-func response_token(result, response_code, headers, body):
+	var score = {"integerValue": GlobalData.score}
+	var name = {"stringValue": username.text}
+	var game_ver = {"stringValue": GlobalData.GAME_VERSION}
+	var fields = {"name": name, "score": score, "game_ver": game_ver}
+	var body := {"fields": fields}
+	
+	var header := ["Authorization: Bearer " + FIREBASE_TOKEN]
+	http.connect("request_completed", self, "send_score_response")
+	http.request(base_url + GlobalData.selected_level, header, false, HTTPClient.METHOD_POST, to_json(body))
+	
+func get_token_response(result, response_code, headers, body):
 	var json = JSON.parse(body.get_string_from_utf8()).result
-	print(json['idToken'])
 	FIREBASE_TOKEN = json['idToken']
-	print(response_code)
-	get_data()
+	send.disabled = false
+	send.text = "Send Score"
+	get_scores()
 	
-func response_data(result, response_code, headers, body):
+func send_score_response(result, response_code, headers, body):
 	var json = JSON.parse(body.get_string_from_utf8())
+	if response_code == 200:
+		send.text = "Score sent OK"
 	print(json.result)
-	print(response_code)
+
+func get_scores():
+	var http = HTTPRequest.new()
+	add_child(http)
+	var header := ["Authorization: Bearer " + FIREBASE_TOKEN]
+	http.connect("request_completed", self, "get_scores_results")
+	http.request(base_url + GlobalData.selected_level, header, false, HTTPClient.METHOD_GET)
+
+func get_scores_results(result, response_code, headers, body):
+	var json = JSON.parse(body.get_string_from_utf8())
+	var scores = []
+	if response_code == 200 && ('documents' in json.result):
+		for score in json.result['documents']:
+			var hs_version = score['fields']['game_ver']['stringValue']
+			var hs_user = score['fields']['name']['stringValue']
+			var hs_score = score['fields']['score']['integerValue']
+			scores.append([hs_score, hs_user, hs_version])
+		scores.sort_custom(MyCustomSorter, "sort_scores")
+		hs.text = ""
+		for hscore in scores:
+			hs.text += str(hscore[0]) + " " + str(hscore[1]) + " " + str(hscore[2]) + "\n"
+	else:
+		hs.text += "Error"
+	
+class MyCustomSorter:
+	static func sort_scores(a, b):
+		if a[0] < b[0]:
+			return true
+		return false
+
+
+func _on_SendScore_pressed():
+	send.disabled = true
+	send.text = "Sending Score"
+	if len(username.text) != 3:
+		username.text = "NaN"
+	send_score()

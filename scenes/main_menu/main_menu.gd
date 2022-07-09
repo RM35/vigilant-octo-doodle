@@ -19,6 +19,7 @@ func get_available_levels():
 		$CC/VB/OptionButton.add_item(level)
 	
 func _on_Play_pressed():
+	GlobalData.score = 0
 	get_tree().change_scene("res://scenes/world/world.tscn")
 
 func _on_Quit_pressed():

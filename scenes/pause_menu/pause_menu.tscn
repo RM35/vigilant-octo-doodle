@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://global_resources/Poppins-Black.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/pause_menu/pause_menu.gd" type="Script" id=2]
+[ext_resource path="res://global_resources/basic_panel.tres" type="StyleBox" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -23,6 +24,7 @@ margin_left = 50.0
 margin_top = 50.0
 margin_right = 179.0
 margin_bottom = 720.0
+custom_constants/separation = 10
 
 [node name="L" type="Label" parent="MC/VB"]
 margin_right = 129.0
@@ -33,16 +35,32 @@ align = 1
 valign = 1
 
 [node name="Resume" type="Button" parent="MC/VB"]
-margin_top = 27.0
+margin_top = 33.0
 margin_right = 129.0
-margin_bottom = 47.0
+margin_bottom = 53.0
 text = "Resume"
 
 [node name="ExittoMM" type="Button" parent="MC/VB"]
-margin_top = 51.0
+margin_top = 63.0
 margin_right = 129.0
-margin_bottom = 71.0
+margin_bottom = 83.0
 text = "Exit to main menu"
+
+[node name="StatPanel" type="Label" parent="MC/VB"]
+margin_top = 93.0
+margin_right = 129.0
+margin_bottom = 266.0
+custom_styles/normal = ExtResource( 3 )
+text = "as
+dasd
+asd
+asd
+asd
+as
+das
+d
+asd
+ads"
 
 [connection signal="pressed" from="MC/VB/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="MC/VB/ExittoMM" to="." method="_on_ExittoMM_pressed"]

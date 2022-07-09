@@ -3,9 +3,9 @@ extends Node2D
 onready var player = get_parent().get_parent()
 
 # Upgradable
-var damage = 100
-var rot_speed = 2
-var spin_range = 50
+onready var damage = get_parent().damage
+onready var rot_speed = get_parent().rot_speed
+onready var spin_range = get_parent().spin_range
 
 func _process(delta):
 	$SpinningBase/SpinningNode.position.x = spin_range

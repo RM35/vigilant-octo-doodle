@@ -55,23 +55,22 @@ func handle_collisions():
 		var body = collision.get_collider()
 		if body.is_in_group("enemy"):
 			health -= 1
+			if health <= 0:
+				end_level()
 
 func level_up():
 	xp = 0
 	player_level += 1
 	xp_to_level = calc_xp_to_lvl()
 	$XP/CC/PBXP.max_value = xp_to_level
-	$LevelUp.visible = true
+	$LevelUp/MC.visible = true
 	$LevelUp.roll_upgrades()
 	get_tree().paused = true
 	
-
 func end_level():
-	print(end_level())
-		
-func _on_PBHP_changed():
-	if health <= 0:
-		end_level()
+	$DeathMenu/P.visible = true
+	$DeathMenu/Firebase.run_end_screen()
+	get_tree().paused = true
 
 func collect_gem(xp_amount):
 	xp += xp_amount

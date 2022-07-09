@@ -12,8 +12,8 @@ var last_dir = Vector2.RIGHT
 var player_prev_pos = Vector2.ZERO
 
 # Upgradable
-var damage = 5
-var speed = 200
+onready var damage = get_parent().damage
+onready var speed = get_parent().speed
 
 func _ready():
 	player_prev_pos = player.global_position
