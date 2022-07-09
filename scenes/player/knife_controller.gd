@@ -2,8 +2,8 @@ extends Node2D
 
 onready var knife_scn = load("res://scenes/weapon/knife/knife.tscn")
 
-var damage = 1
-var speed = 200
+var damage = 10
+var speed = 400
 
 func add_knife():
 	var newknife = knife_scn.instance()

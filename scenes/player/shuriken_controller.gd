@@ -2,9 +2,9 @@ extends Node2D
 
 onready var shur_scn = load("res://scenes/weapon/shuriken/shuriken.tscn")
 
-var damage = 1
-var rot_speed = 2
-var spin_range = 50
+var damage = 5
+var rot_speed = 1.5
+var spin_range = 45
 
 func add_shuriken():
 	var newshur = shur_scn.instance()

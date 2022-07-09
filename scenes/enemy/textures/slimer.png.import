@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/slimer.png-2bdb04d4131aba6b28cd42fb04bcf3fc.stex"
+path="res://.import/slimer.png-01dcf2a90b825b4abd8ce78854528669.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/enemy/textures/slimer.png"
-dest_files=[ "res://.import/slimer.png-2bdb04d4131aba6b28cd42fb04bcf3fc.stex" ]
+source_file="res://Scenes/enemy/textures/slimer.png"
+dest_files=[ "res://.import/slimer.png-01dcf2a90b825b4abd8ce78854528669.stex" ]
 
 [params]
 

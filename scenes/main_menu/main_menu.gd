@@ -3,6 +3,7 @@ extends Control
 func _ready():
 	get_available_levels()
 	GlobalData.selected_level = $CC/VB/OptionButton.get_item_text(0)
+	print(GlobalData.selected_level)
 	
 func get_available_levels():
 	var dir = Directory.new()
@@ -27,4 +28,3 @@ func _on_Quit_pressed():
 
 func _on_OptionButton_item_selected(index):
 	GlobalData.selected_level = $CC/VB/OptionButton.get_item_text(index)
-	print(GlobalData.selected_level)

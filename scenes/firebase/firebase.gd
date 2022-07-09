@@ -11,16 +11,16 @@ onready var send = get_node("../P/VB/SendScore")
 onready var username = get_node("../P/VB/Name")
 onready var score_label = get_node("../P/VB/Score")
 onready var hs = get_node("../P/VB/Hiscores")
-
-
+	
 func run_end_screen():
-	score_label.text = "SCORE: " + str(GlobalData.score)
+	score_label.text = "MAP: " + GlobalData.selected_level.trim_suffix(".json") + "\n" + \
+					   "SCORE: " + str(GlobalData.score)
 	get_api_from_env()
 	get_token()
 
 func get_api_from_env():
 	var file = File.new()
-	file.open("env.json", File.READ)
+	file.open("res://env.json", File.READ)
 	var env = parse_json(file.get_as_text())
 	API_KEY = env['firestore_api']
 	file.close()
@@ -44,7 +44,7 @@ func send_score():
 	
 	var header := ["Authorization: Bearer " + FIREBASE_TOKEN]
 	http.connect("request_completed", self, "send_score_response")
-	http.request(base_url + GlobalData.selected_level, header, false, HTTPClient.METHOD_POST, to_json(body))
+	http.request(base_url + GlobalData.selected_level.trim_suffix(".json"), header, false, HTTPClient.METHOD_POST, to_json(body))
 	
 func get_token_response(result, response_code, headers, body):
 	var json = JSON.parse(body.get_string_from_utf8()).result
@@ -58,13 +58,14 @@ func send_score_response(result, response_code, headers, body):
 	if response_code == 200:
 		send.text = "Score sent OK"
 	print(json.result)
+	get_scores()
 
 func get_scores():
 	var http = HTTPRequest.new()
 	add_child(http)
 	var header := ["Authorization: Bearer " + FIREBASE_TOKEN]
 	http.connect("request_completed", self, "get_scores_results")
-	http.request(base_url + GlobalData.selected_level, header, false, HTTPClient.METHOD_GET)
+	http.request(base_url + GlobalData.selected_level.trim_suffix(".json"), header, false, HTTPClient.METHOD_GET)
 
 func get_scores_results(result, response_code, headers, body):
 	var json = JSON.parse(body.get_string_from_utf8())
@@ -76,11 +77,18 @@ func get_scores_results(result, response_code, headers, body):
 			var hs_score = score['fields']['score']['integerValue']
 			scores.append([hs_score, hs_user, hs_version])
 		scores.sort_custom(MyCustomSorter, "sort_scores")
-		hs.text = ""
+		hs.text = "NAME | SCORE\n\n"
+		scores.invert()
+		var top_ten = 0
 		for hscore in scores:
-			hs.text += str(hscore[0]) + " " + str(hscore[1]) + " " + str(hscore[2]) + "\n"
+			top_ten += 1
+			hs.text += str(hscore[1]) + " | " + str(hscore[0]) + "\n"
+			if top_ten > 20:
+				break
+	elif !('documents' in json.result):
+		hs.text = "No Scores yet, submit to populate"
 	else:
-		hs.text += "Error"
+		hs.text += "Error: " + str(response_code)
 	
 class MyCustomSorter:
 	static func sort_scores(a, b):
@@ -88,10 +96,10 @@ class MyCustomSorter:
 			return true
 		return false
 
-
 func _on_SendScore_pressed():
-	send.disabled = true
-	send.text = "Sending Score"
 	if len(username.text) != 3:
-		username.text = "NaN"
+		send.text = "Send Score [Enter 3 letter name]"
+		return
+	send.text = "Sending Score"
+	send.disabled = true
 	send_score()

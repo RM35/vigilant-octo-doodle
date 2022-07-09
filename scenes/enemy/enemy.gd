@@ -41,6 +41,7 @@ func dead():
 	var new_gem = gem.instance()
 	new_gem.global_position = global_position
 	get_parent().add_child(new_gem)
+	GlobalData.score += 100
 	yield($AudioStreamPlayer2D, "finished")
 	queue_free()
 	
