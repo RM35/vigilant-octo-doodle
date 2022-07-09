@@ -7,9 +7,10 @@ export var u_data: Resource = load("res://scenes/enemy/enemy_data/carrot.tres")
 onready var gem = load("res://scenes/gem/gem.tscn")
 var velocity = Vector2.ZERO
 var knock_back = false
+var max_hp
 
 func _ready():
-	pass
+	max_hp = u_data.health
 
 func set_enemy_type(unit_data: String):
 	u_data = load(unit_data)
@@ -39,15 +40,22 @@ func handle_collisions():
 
 func dead():
 	var new_gem = gem.instance()
+	new_gem.xp = max_hp + u_data.speed
 	new_gem.global_position = global_position
 	get_parent().add_child(new_gem)
-	GlobalData.score += 100
+	GlobalData.score += max_hp + u_data.speed
 	yield($AudioStreamPlayer2D, "finished")
+	yield($Hitnum.get_node("Tween"), "tween_completed")
 	queue_free()
 	
 #Let the tween time regulate the rate damage taken
 func take_damage(amount):
 	if !$FlashDamage.is_active():
+		
+		#Hitnum
+		$Hitnum.show_hits(str("%3.0f" % amount))
+		
+		#Check for death
 		u_data.health -= amount
 		if u_data.health <= 0:
 			dead()

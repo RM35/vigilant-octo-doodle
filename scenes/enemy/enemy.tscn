@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/enemy/textures/carot.png" type="Texture" id=1]
 [ext_resource path="res://scenes/enemy/enemy.gd" type="Script" id=2]
 [ext_resource path="res://global_resources/pop.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Scenes/hitnum/hitnum.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 13.0384
@@ -27,3 +28,6 @@ stream = ExtResource( 3 )
 visible = false
 width = 2.0
 default_color = Color( 0, 0, 0, 1 )
+
+[node name="Hitnum" parent="." instance=ExtResource( 4 )]
+visible = false

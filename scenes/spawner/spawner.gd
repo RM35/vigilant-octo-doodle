@@ -13,8 +13,8 @@ func get_new_global_spawn_pos():
 	var random_direction = Vector2(rng.randf_range(-1, 1), rng.randf_range(-1, 1)).normalized()
 	$Debug.clear_points()
 	$Debug.add_point(player.global_position)
-	$Debug.add_point((random_direction * 100) + player.global_position)
-	return (random_direction * 100) + player.global_position
+	$Debug.add_point((random_direction * 500) + player.global_position)
+	return (random_direction * 500) + player.global_position
 	
 func _ready():
 	load_level("res://scenes/spawner/levels/" + 
