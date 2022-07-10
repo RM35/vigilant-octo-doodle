@@ -35,6 +35,7 @@ func _process(delta):
 		global_position = global_position  + (dir * speed * delta) + offset
 	else:
 		reset = false
+		$Timer.start()
 		dir = last_dir
 		if dir.x < 0:
 			$Sprite.set_scale(Vector2(-1,1))

@@ -82,3 +82,7 @@ func collect_gem(xp_amount):
 	xp += xp_amount
 	if xp >= xp_to_level:
 		level_up()
+
+
+func _on_Button_pressed():
+	level_up()
