@@ -97,6 +97,7 @@ pause_mode = 2
 [node name="DeathMenu" parent="." instance=ExtResource( 10 )]
 
 [node name="DebugLevelUp" type="Button" parent="."]
+visible = false
 margin_left = -216.0
 margin_top = -54.0
 margin_right = -94.0

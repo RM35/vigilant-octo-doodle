@@ -5,6 +5,7 @@ const y_view = 24
 onready var player = get_node("../Player")
 
 func _ready():
+	get_tree().paused = false
 	if GlobalData.selected_level == "carrot.json":
 		modulate = Color(0.8, 0.6 ,0, 1)
 	if GlobalData.selected_level == "slimer.json":
