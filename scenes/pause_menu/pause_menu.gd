@@ -23,7 +23,8 @@ func update_stats():
 	var sp = $MC/VB/StatPanel
 	sp.text = "Current Stats:\n"
 	sp.text += "Level: " + str(player.player_level) + "\n"
-	sp.text += "XP: " + str(player.xp) + "/" + str(player.xp_to_level) + "\n\n"
+	sp.text += "XP: " + str(player.xp) + "/" + str(player.xp_to_level) + "\n"
+	sp.text += "Move Speed: " + str(player.MAX_SPEED) + "\n\n"
 	sp.text += "Shuriken:\n"
 	sp.text += "Damage: " + str(player.get_node("Shurikens").damage) + "\n"
 	sp.text += "Rotate Speed: " + str(player.get_node("Shurikens").rot_speed) + "\n"

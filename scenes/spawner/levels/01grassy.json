@@ -1,0 +1,158 @@
+[
+    {
+        "start": 0,
+        "type": "recurring",
+        "enemy": "carrot.tres",
+        "duration": 800,
+        "delay": 3
+    },
+    {
+        "start": 10,
+        "type": "recurring",
+        "enemy": "carrot.tres",
+        "duration": 250,
+        "delay": 5
+    },
+    {
+        "start": 15,
+        "type": "recurring",
+        "enemy": "ghost.tres",
+        "duration": 250,
+        "delay": 15
+    },
+    {
+        "start": 20,
+        "type": "recurring",
+        "enemy": "carrot.tres",
+        "duration": 800,
+        "delay": 6
+    },
+    {
+        "start": 45,
+        "type": "recurring",
+        "enemy": "ghost.tres",
+        "duration": 800,
+        "delay": 12
+    },
+    {
+        "start": 67,
+        "type": "recurring",
+        "enemy": "corgi.tres",
+        "duration": 800,
+        "delay": 6
+    },
+    {
+        "start": 90,
+        "type": "recurring",
+        "enemy": "sword.tres",
+        "duration": 800,
+        "delay": 26
+    },
+    {
+        "start": 97,
+        "type": "recurring",
+        "enemy": "carrot.tres",
+        "duration": 800,
+        "delay": 3
+    },
+    {
+        "start": 100,
+        "type": "oneshot",
+        "enemy": "carrot.tres",
+        "amount": 30
+    },
+    {
+        "start": 120,
+        "type": "recurring",
+        "enemy": "dan.tres",
+        "duration": 800,
+        "delay": 30
+    },
+    {
+        "start": 160,
+        "type": "recurring",
+        "enemy": "sword.tres",
+        "duration": 800,
+        "delay": 25
+    },
+    {
+        "start": 200,
+        "type": "oneshot",
+        "enemy": "ghost.tres",
+        "amount": 30
+    },
+    {
+        "start": 250,
+        "type": "recurring",
+        "enemy": "slime.tres",
+        "duration": 800,
+        "delay": 23
+    },
+    {
+        "start": 255,
+        "type": "recurring",
+        "enemy": "slime.tres",
+        "duration": 800,
+        "delay": 33
+    },
+    {
+        "start": 258,
+        "type": "recurring",
+        "enemy": "dan.tres",
+        "duration": 800,
+        "delay": 20
+    },
+    {
+        "start": 300,
+        "type": "oneshot",
+        "enemy": "sword.tres",
+        "amount": 30
+    },
+    {
+        "start": 350,
+        "type": "recurring",
+        "enemy": "sassy.tres",
+        "duration": 800,
+        "delay": 20
+    },
+    {
+        "start": 400,
+        "type": "oneshot",
+        "enemy": "dan.tres",
+        "amount": 30
+    },
+    {
+        "start": 450,
+        "type": "recurring",
+        "enemy": "sassy.tres",
+        "duration": 800,
+        "delay": 23
+    },
+    {
+        "start": 500,
+        "type": "oneshot",
+        "enemy": "sassy.tres",
+        "amount": 30
+    },
+    {
+        "start": 550,
+        "type": "recurring",
+        "enemy": "sassy.tres",
+        "duration": 800,
+        "delay": 23
+    },
+    {
+        "start": 600,
+        "type": "recurring",
+        "enemy": "dan_fast.tres",
+        "duration": 800,
+        "delay": 2
+    },
+    {
+        "start": 610,
+        "type": "recurring",
+        "enemy": "dan_fast.tres",
+        "duration": 800,
+        "delay": 1
+    }
+]

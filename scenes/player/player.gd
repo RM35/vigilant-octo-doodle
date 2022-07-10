@@ -1,18 +1,19 @@
 extends KinematicBody2D
 
 const ACCELERATION = 2000
-const MAX_SPEED = 100
+var MAX_SPEED = 95
 
 var motion = Vector2.ZERO
 var health = 100
 var xp = 0
 var player_level = 0
-var xp_growth_rate = 100
+var xp_growth_rate = 120
 onready var xp_to_level = calc_xp_to_lvl()
 
 var rng = RandomNumberGenerator.new()
 
 func _ready():
+	rng.randomize()
 	if rng.randi_range(0, 1) == 1:
 		$Knives.add_knife()
 	else:

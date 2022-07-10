@@ -31,3 +31,7 @@ default_color = Color( 0, 0, 0, 1 )
 
 [node name="Hitnum" parent="." instance=ExtResource( 4 )]
 visible = false
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0

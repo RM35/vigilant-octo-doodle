@@ -3,17 +3,17 @@ extends KinematicBody2D
 class_name enemy
 
 onready var player = get_node("../../Player")
-export var u_data: Resource = load("res://scenes/enemy/enemy_data/carrot.tres")
+export var u_data: Resource = load("res://scenes/enemy/enemy_data/carrot.tres").duplicate()
 onready var gem = load("res://scenes/gem/gem.tscn")
 var velocity = Vector2.ZERO
 var knock_back = false
 var max_hp
-
+	
 func _ready():
 	max_hp = u_data.health
-
+	
 func set_enemy_type(unit_data: String):
-	u_data = load(unit_data)
+	u_data = load(unit_data).duplicate()
 	$Sprite.texture = u_data.texture
 	
 func _physics_process(delta):
@@ -39,13 +39,15 @@ func handle_collisions():
 			pass
 
 func dead():
+	yield($AudioStreamPlayer2D, "finished")
+	yield($Hitnum.get_node("Tween"), "tween_completed")
 	var new_gem = gem.instance()
 	new_gem.xp = max_hp + u_data.speed
 	new_gem.global_position = global_position
 	get_parent().add_child(new_gem)
+	
+	#Score
 	GlobalData.score += max_hp + u_data.speed
-	yield($AudioStreamPlayer2D, "finished")
-	yield($Hitnum.get_node("Tween"), "tween_completed")
 	queue_free()
 	
 #Let the tween time regulate the rate damage taken

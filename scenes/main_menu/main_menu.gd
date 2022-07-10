@@ -11,7 +11,6 @@ func get_available_levels():
 	if dir.open("res://scenes/spawner/levels/") == OK:
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
-		print(file_name)
 		while file_name != "":
 			if !dir.current_is_dir():
 				levels.append(file_name)

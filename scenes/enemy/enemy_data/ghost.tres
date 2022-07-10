@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource( 1 )
-speed = 16
+speed = 25
 health = 34
 texture = ExtResource( 2 )
 knockbackable = true

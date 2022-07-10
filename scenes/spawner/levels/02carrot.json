@@ -1,0 +1,133 @@
+[
+    {
+        "start": 0,
+        "type": "recurring",
+        "enemy": "carrot.tres",
+        "duration": 800,
+        "delay": 3
+    },
+    {
+        "start": 20,
+        "type": "recurring",
+        "enemy": "carrot.tres",
+        "duration": 600,
+        "delay": 8
+    },
+    {
+        "start": 25,
+        "type": "recurring",
+        "enemy": "carrot.tres",
+        "duration": 60,
+        "delay": 5
+    },
+    {
+        "start": 30,
+        "type": "recurring",
+        "enemy": "carrot.tres",
+        "duration": 60,
+        "delay": 5
+    },
+    {
+        "start": 40,
+        "type": "recurring",
+        "enemy": "carrot_med.tres",
+        "duration": 600,
+        "delay": 8
+    },
+    {
+        "start": 60,
+        "type": "oneshot",
+        "enemy": "carrot_med.tres",
+        "amount": 8
+    },
+    {
+        "start": 60,
+        "type": "oneshot",
+        "enemy": "carrot_heavy.tres",
+        "amount": 8
+    },
+    {
+        "start": 64,
+        "type": "recurring",
+        "enemy": "carrot_heavy.tres",
+        "duration": 600,
+        "delay": 15
+    },
+    {
+        "start": 64,
+        "type": "recurring",
+        "enemy": "carrot_speed.tres",
+        "duration": 600,
+        "delay": 30
+    },
+    {
+        "start": 64,
+        "type": "recurring",
+        "enemy": "carrot_med.tres",
+        "duration": 600,
+        "delay": 4
+    },
+    {
+        "start": 90,
+        "type": "recurring",
+        "enemy": "carrot.tres",
+        "duration": 600,
+        "delay": 4
+    },
+    {
+        "start": 95,
+        "type": "recurring",
+        "enemy": "carrot_speed.tres",
+        "duration": 600,
+        "delay": 30
+    },
+    {
+        "start": 95,
+        "type": "recurring",
+        "enemy": "carrot_med.tres",
+        "duration": 600,
+        "delay": 5
+    },
+    {
+        "start": 120,
+        "type": "recurring",
+        "enemy": "carrot_heavy.tres",
+        "duration": 1000,
+        "delay": 6
+    },
+    {
+        "start": 250,
+        "type": "recurring",
+        "enemy": "carrot_speed.tres",
+        "duration": 600,
+        "delay": 20
+    },
+    {
+        "start": 400,
+        "type": "recurring",
+        "enemy": "carrot.tres",
+        "duration": 1000,
+        "delay": 1
+    },
+    {
+        "start": 500,
+        "type": "recurring",
+        "enemy": "carrot_med.tres",
+        "duration": 1000,
+        "delay": 2
+    },
+    {
+        "start": 550,
+        "type": "recurring",
+        "enemy": "carrot_speed.tres",
+        "duration": 1000,
+        "delay": 2
+    },
+    {
+        "start": 600,
+        "type": "recurring",
+        "enemy": "carrot_heavy.tres",
+        "duration": 1000,
+        "delay": 1
+    }
+]

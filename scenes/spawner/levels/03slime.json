@@ -1,0 +1,125 @@
+[
+    {
+        "start": 0,
+        "type": "recurring",
+        "enemy": "slime.tres",
+        "duration": 600,
+        "delay": 1
+    },
+    {
+        "start": 30,
+        "type": "recurring",
+        "enemy": "slime_med.tres",
+        "duration": 600,
+        "delay": 5
+    },
+    {
+        "start": 60,
+        "type": "recurring",
+        "enemy": "slime_heavy.tres",
+        "duration": 600,
+        "delay": 10
+    },
+    {
+        "start": 90,
+        "type": "recurring",
+        "enemy": "slime.tres",
+        "duration": 600,
+        "delay": 2
+    },
+    {
+        "start": 120,
+        "type": "recurring",
+        "enemy": "slime.tres",
+        "duration": 600,
+        "delay": 3
+    },
+    {
+        "start": 150,
+        "type": "recurring",
+        "enemy": "slime.tres",
+        "duration": 600,
+        "delay": 1
+    },
+    {
+        "start": 160,
+        "type": "oneshot",
+        "enemy": "slime.tres",
+        "amount": 30
+    },
+    {
+        "start": 180,
+        "type": "recurring",
+        "enemy": "slime_med.tres",
+        "duration": 600,
+        "delay": 2
+    },
+    {
+        "start": 200,
+        "type": "oneshot",
+        "enemy": "slime.tres",
+        "amount": 30
+    },
+    {
+        "start": 210,
+        "type": "recurring",
+        "enemy": "slime_heavy.tres",
+        "duration": 600,
+        "delay": 3
+    },
+    {
+        "start": 220,
+        "type": "recurring",
+        "enemy": "slime_fast.tres",
+        "duration": 600,
+        "delay": 10
+    },
+    {
+        "start": 250,
+        "type": "oneshot",
+        "enemy": "slime.tres",
+        "amount": 30
+    },
+    {
+        "start": 300,
+        "type": "oneshot",
+        "enemy": "slime.tres",
+        "amount": 30
+    },
+    {
+        "start": 350,
+        "type": "oneshot",
+        "enemy": "slime.tres",
+        "amount": 30
+    },
+    {
+        "start": 400,
+        "type": "oneshot",
+        "enemy": "slime.tres",
+        "amount": 30
+    },
+    {
+        "start": 450,
+        "type": "oneshot",
+        "enemy": "slime.tres",
+        "amount": 30
+    },
+    {
+        "start": 500,
+        "type": "oneshot",
+        "enemy": "slime.tres",
+        "amount": 30
+    },
+    {
+        "start": 550,
+        "type": "oneshot",
+        "enemy": "slime.tres",
+        "amount": 30
+    },
+    {
+        "start": 600,
+        "type": "oneshot",
+        "enemy": "slime.tres",
+        "amount": 100
+    }
+]

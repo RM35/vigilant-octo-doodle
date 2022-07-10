@@ -39,15 +39,15 @@ func do_upgrade(which: int):
 		"Refill HP":
 			player.health = 100
 		"+ Knife Speed":
-			knife_controller.change_speed(1.05)
+			knife_controller.change_speed(1.05, 0)
 		"+ Knife Damage":
-			knife_controller.change_damage(1.05)
+			knife_controller.change_damage(1.00, 1)
 		"+ Shuriken Damage":
-			shuriken_controller.change_damage(1.05)
+			shuriken_controller.change_damage(1.00, 1)
 		"+ Shuriken Spin Speed":
-			shuriken_controller.change_rot_speed(1.05)
+			shuriken_controller.change_rot_speed(1.05, 0)
 		"+ Shuriken Spin Range":
-			shuriken_controller.change_spin_range(1.05)
+			shuriken_controller.change_spin_range(1.05, 0)
 		
 	$MC.visible = false
 	get_tree().paused = false

@@ -5,10 +5,10 @@ const y_view = 24
 onready var player = get_node("../Player")
 
 func _ready():
-	if GlobalData.selected_level == "res://scenes/spawner/levels/carrot_land.json":
-		modulate = Color(240, 175 ,0, 255)
-	if GlobalData.selected_level == "res://scenes/spawner/levels/slimer.json":
-		modulate = Color(0, 255 ,0, 255)
+	if GlobalData.selected_level == "carrot.json":
+		modulate = Color(0.8, 0.6 ,0, 1)
+	if GlobalData.selected_level == "slimer.json":
+		modulate = Color(0, 1 ,0, 1)
 	
 func _process(delta):
 	render_tiles()

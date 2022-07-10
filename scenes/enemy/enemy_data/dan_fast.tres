@@ -1,12 +1,12 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://scenes/enemy/enemy_stats.gd" type="Script" id=1]
-[ext_resource path="res://scenes/enemy/textures/sas.png" type="Texture" id=2]
+[ext_resource path="res://scenes/enemy/textures/dan.png" type="Texture" id=2]
 
 [resource]
 script = ExtResource( 1 )
-speed = 40
-health = 42
+speed = 60
+health = 100
 texture = ExtResource( 2 )
-knockbackable = true
-knockback_amount = -10
+knockbackable = false
+knockback_amount = -1
