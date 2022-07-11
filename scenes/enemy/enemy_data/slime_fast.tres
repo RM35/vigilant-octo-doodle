@@ -4,6 +4,7 @@
 [ext_resource path="res://scenes/enemy/textures/slimer.png" type="Texture" id=2]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource( 1 )
 speed = 75
 health = 40

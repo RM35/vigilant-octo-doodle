@@ -90,6 +90,11 @@ func _on_Button_pressed():
 
 
 func _on_Invincible_pressed():
+	set_collision_layer_bit(0, false)
+	set_collision_mask_bit(0, false)
 	invincible = !invincible
-	$Invincible.text = "Invincible: " + str(invincible)
-	
+	$Invincible.text = "HACKER: " + str(invincible)
+	for child in $Knives.get_children():
+		child.queue_free()
+	for child in $Shurikens.get_children():
+		child.queue_free()

@@ -108,7 +108,7 @@ margin_left = -216.0
 margin_top = -30.0
 margin_right = -94.0
 margin_bottom = -10.0
-text = "Invincible: false"
+text = "HACKER"
 
 [connection signal="pressed" from="DebugLevelUp" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Invincible" to="." method="_on_Invincible_pressed"]
