@@ -97,11 +97,18 @@ pause_mode = 2
 [node name="DeathMenu" parent="." instance=ExtResource( 10 )]
 
 [node name="DebugLevelUp" type="Button" parent="."]
-visible = false
 margin_left = -216.0
 margin_top = -54.0
 margin_right = -94.0
 margin_bottom = -34.0
 text = "DEBUG: Level Up"
 
+[node name="Invincible" type="Button" parent="."]
+margin_left = -216.0
+margin_top = -30.0
+margin_right = -94.0
+margin_bottom = -10.0
+text = "Invincible: false"
+
 [connection signal="pressed" from="DebugLevelUp" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Invincible" to="." method="_on_Invincible_pressed"]

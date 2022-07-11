@@ -1,0 +1,8 @@
+[
+    {
+        "start": 1,
+        "type": "oneshot",
+        "enemy": "slime.tres",
+        "amount": 50
+    }
+]

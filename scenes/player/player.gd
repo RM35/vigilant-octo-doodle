@@ -9,6 +9,7 @@ var xp = 0
 var player_level = 0
 var xp_growth_rate = 120
 onready var xp_to_level = calc_xp_to_lvl()
+var invincible = false
 
 var rng = RandomNumberGenerator.new()
 
@@ -59,7 +60,7 @@ func handle_collisions():
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
 		var body = collision.get_collider()
-		if body.is_in_group("enemy"):
+		if body.is_in_group("enemy") && !invincible:
 			health -= 1
 			if health <= 0:
 				end_level()
@@ -86,3 +87,9 @@ func collect_gem(xp_amount):
 
 func _on_Button_pressed():
 	level_up()
+
+
+func _on_Invincible_pressed():
+	invincible = !invincible
+	$Invincible.text = "Invincible: " + str(invincible)
+	
