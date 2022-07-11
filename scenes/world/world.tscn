@@ -41,3 +41,5 @@ position = Vector2( 402, 167 )
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
 [node name="Spawner" parent="." instance=ExtResource( 7 )]
+
+[node name="Gems" type="Node" parent="."]

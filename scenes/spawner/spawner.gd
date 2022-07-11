@@ -27,14 +27,15 @@ func load_level(json_path):
 	file.close()
 	
 func spawn(type):
-	var newenemy: enemy = enemy.instance()
-	newenemy.global_position = get_new_global_spawn_pos()
-	newenemy.set_enemy_type("res://scenes/enemy/enemy_data/" + type)
-	add_child(newenemy)
+	if get_child_count() < 150:
+		var newenemy: enemy = enemy.instance()
+		newenemy.global_position = get_new_global_spawn_pos()
+		newenemy.set_enemy_type("res://scenes/enemy/enemy_data/" + type)
+		add_child(newenemy)
 	
 func _process(delta):
 	pass
-
+	
 # Level info parsing and spawing
 func _on_Timer_timeout():
 	elapsed_time += $Timer.wait_time

@@ -41,7 +41,7 @@ func dead():
 	var new_gem = gem.instance()
 	new_gem.xp = max_hp + u_data.speed
 	new_gem.global_position = global_position
-	get_parent().add_child(new_gem)
+	get_parent().get_parent().get_node("Gems").add_child(new_gem)
 	
 	#Score
 	GlobalData.score += max_hp + u_data.speed
