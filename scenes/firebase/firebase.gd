@@ -13,8 +13,9 @@ onready var score_label = get_node("../P/VB/Score")
 onready var hs = get_node("../P/VB/Hiscores")
 	
 func run_end_screen():
-	score_label.text = "MAP: " + GlobalData.selected_level.trim_suffix(".json") + "\n" + \
-					   "SCORE: " + str(GlobalData.score)
+	score_label.text = "MAP:  " + GlobalData.selected_level.trim_suffix(".json").right(2) + "\n" + \
+					   "SCORE:  " + str(GlobalData.score) + "\n" + \
+					   "TIME:  " + str("%3.0f" % GlobalData.time_survived)
 	get_api_from_env()
 	get_token()
 
@@ -36,10 +37,10 @@ func send_score():
 	var http = HTTPRequest.new()
 	add_child(http)
 	
-	var score = {"integerValue": GlobalData.score}
+	var score = {"integerValue": int(GlobalData.score)}
 	var name = {"stringValue": username.text}
-	var game_ver = {"stringValue": GlobalData.GAME_VERSION}
-	var fields = {"name": name, "score": score, "game_ver": game_ver}
+	var time_s = {"integerValue": int(GlobalData.time_survived)}
+	var fields = {"name": name, "score": score, "time": time_s}
 	var body := {"fields": fields}
 	
 	var header := ["Authorization: Bearer " + FIREBASE_TOKEN]
@@ -72,17 +73,17 @@ func get_scores_results(result, response_code, headers, body):
 	var scores = []
 	if response_code == 200 && ('documents' in json.result):
 		for score in json.result['documents']:
-			var hs_version = score['fields']['game_ver']['stringValue']
 			var hs_user = score['fields']['name']['stringValue']
 			var hs_score = score['fields']['score']['integerValue']
-			scores.append([hs_score, hs_user, hs_version])
+			var hs_time = score['fields']['time']['integerValue']
+			scores.append([hs_score, hs_user, hs_time])
 		scores.sort_custom(MyCustomSorter, "sort_scores")
-		hs.text = "NAME | SCORE\n\n"
+		hs.text = "NAME | SCORE | TIME\n\n"
 		scores.invert()
 		var top_ten = 0
 		for hscore in scores:
 			top_ten += 1
-			hs.text += str(hscore[1]) + " | " + str(hscore[0]) + "\n"
+			hs.text += str(hscore[1]) + " | " + str(hscore[0]) + " | " + str(hscore[2]) +"\n"
 			if top_ten > 20:
 				break
 	elif !('documents' in json.result):
