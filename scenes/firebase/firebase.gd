@@ -84,7 +84,7 @@ func get_scores_results(result, response_code, headers, body):
 		for hscore in scores:
 			top_ten += 1
 			hs.text += str(hscore[1]) + " | " + str(hscore[0]) + " | " + str(hscore[2]) +"\n"
-			if top_ten > 20:
+			if top_ten > 10:
 				break
 	elif !('documents' in json.result):
 		hs.text = "No Scores yet, submit to populate"

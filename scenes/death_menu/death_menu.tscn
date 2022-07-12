@@ -17,9 +17,9 @@ layer = 0
 script = ExtResource( 2 )
 
 [node name="P" type="Panel" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+custom_styles/panel = ExtResource( 1 )
 
 [node name="VB" type="VBoxContainer" parent="P"]
 anchor_left = 0.5
@@ -37,22 +37,27 @@ rect_min_size = Vector2( 0, 20 )
 [node name="MainMenu" type="Button" parent="P/VB"]
 margin_top = 40.0
 margin_right = 294.0
-margin_bottom = 69.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 0, 50 )
 custom_fonts/font = SubResource( 1 )
+custom_styles/hover = ExtResource( 1 )
 text = "Return to Main Menu"
 
 [node name="SendScore" type="Button" parent="P/VB"]
-margin_top = 89.0
+margin_top = 110.0
 margin_right = 294.0
-margin_bottom = 118.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 0, 50 )
 custom_fonts/font = SubResource( 1 )
+custom_styles/hover = ExtResource( 1 )
 disabled = true
 text = "Waiting for id_token"
 
 [node name="Name" type="LineEdit" parent="P/VB"]
-margin_top = 138.0
+margin_top = 180.0
 margin_right = 294.0
-margin_bottom = 171.0
+margin_bottom = 230.0
+rect_min_size = Vector2( 0, 50 )
 custom_fonts/font = SubResource( 1 )
 align = 1
 max_length = 3
@@ -60,9 +65,9 @@ placeholder_text = "Enter Name (3 Characters Max)"
 placeholder_alpha = 0.389
 
 [node name="Score" type="Label" parent="P/VB"]
-margin_top = 191.0
+margin_top = 250.0
 margin_right = 294.0
-margin_bottom = 220.0
+margin_bottom = 279.0
 custom_fonts/font = SubResource( 2 )
 custom_styles/normal = ExtResource( 1 )
 text = "YOUR SCORE: 222"
@@ -71,9 +76,9 @@ valign = 1
 autowrap = true
 
 [node name="Hiscores" type="Label" parent="P/VB"]
-margin_top = 240.0
+margin_top = 299.0
 margin_right = 294.0
-margin_bottom = 260.0
+margin_bottom = 319.0
 custom_styles/normal = ExtResource( 1 )
 text = "LOADING HISCORES..."
 align = 1
