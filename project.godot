@@ -79,6 +79,10 @@ pausemenu={
  ]
 }
 
+[logging]
+
+file_logging/enable_file_logging=true
+
 [physics]
 
 common/physics_jitter_fix=0.0

@@ -24,11 +24,6 @@ stream = ExtResource( 3 )
 
 [node name="FlashDamage" type="Tween" parent="."]
 
-[node name="Line2D" type="Line2D" parent="."]
-visible = false
-width = 2.0
-default_color = Color( 0, 0, 0, 1 )
-
 [node name="Hitnum" parent="." instance=ExtResource( 4 )]
 visible = false
 
