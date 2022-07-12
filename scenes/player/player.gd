@@ -86,7 +86,7 @@ func collect_gem(xp_amount):
 
 
 func _on_Button_pressed():
-	level_up()
+	end_level()
 
 
 func _on_Invincible_pressed():

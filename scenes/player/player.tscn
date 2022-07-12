@@ -110,5 +110,13 @@ margin_right = -94.0
 margin_bottom = -10.0
 text = "HACKER"
 
+[node name="Button" type="Button" parent="."]
+margin_left = -217.0
+margin_top = -5.0
+margin_right = -181.0
+margin_bottom = 15.0
+text = "Death"
+
 [connection signal="pressed" from="DebugLevelUp" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Invincible" to="." method="_on_Invincible_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

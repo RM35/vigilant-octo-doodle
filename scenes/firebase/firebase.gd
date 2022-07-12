@@ -92,7 +92,7 @@ func get_scores_results(result, response_code, headers, body):
 	
 class MyCustomSorter:
 	static func sort_scores(a, b):
-		if a[0] < b[0]:
+		if float(a[0]) < float(b[0]):
 			return true
 		return false
 
