@@ -4,5 +4,28 @@
         "type": "oneshot",
         "enemy": "slime.tres",
         "amount": 150
+    },
+    {
+        "start": 2,
+        "type": "recurring",
+        "enemy": "slime_med.tres",
+        "duration": 600,
+        "delay": 1
+    }
+    ,
+    {
+        "start": 3,
+        "type": "recurring",
+        "enemy": "slime_fast.tres",
+        "duration": 600,
+        "delay": 1
+    }
+    ,
+    {
+        "start": 4,
+        "type": "recurring",
+        "enemy": "slime_fast.tres",
+        "duration": 600,
+        "delay": 1
     }
 ]

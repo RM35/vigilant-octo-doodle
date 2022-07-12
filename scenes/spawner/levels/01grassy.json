@@ -3,25 +3,32 @@
         "start": 0,
         "type": "recurring",
         "enemy": "carrot.tres",
-        "duration": 800,
-        "delay": 3
+        "duration": 120,
+        "delay": 2
     },
     {
-        "start": 10,
+        "start": 30,
         "type": "recurring",
         "enemy": "carrot.tres",
         "duration": 250,
-        "delay": 5
+        "delay": 2
     },
     {
-        "start": 15,
+        "start": 31,
+        "type": "recurring",
+        "enemy": "carrot_med.tres",
+        "duration": 32,
+        "delay": 4
+    },
+    {
+        "start": 32,
         "type": "recurring",
         "enemy": "ghost.tres",
-        "duration": 250,
-        "delay": 15
+        "duration": 600,
+        "delay": 6
     },
     {
-        "start": 20,
+        "start": 40,
         "type": "recurring",
         "enemy": "carrot.tres",
         "duration": 800,
@@ -46,7 +53,7 @@
         "type": "recurring",
         "enemy": "sword.tres",
         "duration": 800,
-        "delay": 26
+        "delay": 12
     },
     {
         "start": 97,
@@ -59,27 +66,34 @@
         "start": 100,
         "type": "oneshot",
         "enemy": "carrot.tres",
-        "amount": 30
+        "amount": 40
     },
     {
         "start": 120,
         "type": "recurring",
         "enemy": "dan.tres",
         "duration": 800,
-        "delay": 30
+        "delay": 15
     },
     {
         "start": 160,
         "type": "recurring",
         "enemy": "sword.tres",
         "duration": 800,
-        "delay": 25
+        "delay": 18
     },
     {
         "start": 200,
         "type": "oneshot",
         "enemy": "ghost.tres",
-        "amount": 30
+        "amount": 35
+    },
+    {
+        "start": 210,
+        "type": "recurring",
+        "enemy": "ghost.tres",
+        "duration": 800,
+        "delay": 6
     },
     {
         "start": 250,
@@ -122,6 +136,21 @@
         "amount": 30
     },
     {
+        "start": 405,
+        "type": "recurring",
+        "enemy": "slime_fast.tres",
+        "duration": 800,
+        "delay": 45
+    },
+    {
+        "start": 410,
+        "type": "recurring",
+        "enemy": "slime_heavy.tres",
+        "duration": 800,
+        "delay": 45
+    },
+    
+    {
         "start": 450,
         "type": "recurring",
         "enemy": "sassy.tres",
@@ -151,8 +180,16 @@
     {
         "start": 610,
         "type": "recurring",
-        "enemy": "dan_fast.tres",
+        "enemy": "slime_fast.tres",
         "duration": 800,
-        "delay": 1
+        "delay": 20
+    }
+    ,
+    {
+        "start": 630,
+        "type": "recurring",
+        "enemy": "slime_fast.tres",
+        "duration": 800,
+        "delay": 20
     }
 ]

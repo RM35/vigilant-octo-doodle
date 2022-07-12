@@ -1,0 +1,40 @@
+[
+    {
+        "start": 0,
+        "type": "recurring",
+        "enemy": "slime_heavy.tres",
+        "duration": 1000,
+        "delay": 1
+    },
+    {
+        "start": 20,
+        "type": "recurring",
+        "enemy": "slime_heavy.tres",
+        "duration": 1000,
+        "delay": 1
+    }
+    ,
+    {
+        "start": 40,
+        "type": "recurring",
+        "enemy": "slime_heavy.tres",
+        "duration": 1000,
+        "delay": 1
+    }
+    ,
+    {
+        "start": 60,
+        "type": "recurring",
+        "enemy": "slime_heavy.tres",
+        "duration": 1000,
+        "delay": 1
+    }
+    ,
+    {
+        "start": 80,
+        "type": "recurring",
+        "enemy": "slime_fast.tres",
+        "duration": 1000,
+        "delay": 1
+    }
+]

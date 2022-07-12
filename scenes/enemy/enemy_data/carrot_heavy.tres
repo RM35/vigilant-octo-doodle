@@ -11,3 +11,4 @@ health = 100
 texture = ExtResource( 2 )
 knockbackable = false
 knockback_amount = -10
+sprite_scale = Vector2( 1.5, 1.5 )

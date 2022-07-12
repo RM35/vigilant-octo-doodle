@@ -7,7 +7,7 @@ var motion = Vector2.ZERO
 var health = 100
 var xp = 0
 var player_level = 0
-var xp_growth_rate = 120
+var xp_growth_rate = 130
 onready var xp_to_level = calc_xp_to_lvl()
 var invincible = false
 
@@ -21,7 +21,7 @@ func _ready():
 		$Shurikens.add_shuriken()
 		
 func calc_xp_to_lvl():
-	return 100 + (pow((player_level / 2), 2) * xp_growth_rate)
+	return 150 + (pow((player_level / 2), 2) * xp_growth_rate)
 	
 func _physics_process(delta):
 	var axis = get_input_axis()

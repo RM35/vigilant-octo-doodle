@@ -96,6 +96,34 @@
         "delay": 6
     },
     {
+        "start": 150,
+        "type": "recurring",
+        "enemy": "carrot.tres",
+        "duration": 450,
+        "delay": 4
+    },
+    {
+        "start": 170,
+        "type": "recurring",
+        "enemy": "carrot.tres",
+        "duration": 450,
+        "delay": 6
+    },
+    {
+        "start": 180,
+        "type": "recurring",
+        "enemy": "carrot_med.tres",
+        "duration": 450,
+        "delay": 6
+    },
+    {
+        "start": 220,
+        "type": "recurring",
+        "enemy": "carrot_heavy.tres",
+        "duration": 350,
+        "delay": 12
+    },
+    {
         "start": 250,
         "type": "recurring",
         "enemy": "carrot_speed.tres",

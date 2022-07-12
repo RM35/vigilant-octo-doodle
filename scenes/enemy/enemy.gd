@@ -8,16 +8,30 @@ onready var gem = load("res://scenes/gem/gem.tscn")
 var velocity = Vector2.ZERO
 var knock_back = false
 var max_hp
-	
+var age = 0.0
+var power
+
+func _process(delta):
+	$Label.text = str(power)
+	age += delta
+	# If just out of screen and old then kill
+	if global_position.distance_to(player.global_position) > 400 && age > 60:
+		queue_free()
+	# If further but not killable then respawn oposite
+	if global_position.distance_to(player.global_position) > 750:
+		global_position += (player.global_position - global_position) + ((player.global_position - global_position).normalized() * 400)
+
 func _ready():
 	max_hp = u_data.health
 	
 func set_enemy_type(unit_data: String):
-	u_data = load(unit_data)
+	u_data = load(unit_data).duplicate()
+	power = clamp((u_data.health + u_data.speed + 50.0) / 100.0, 1.00, 2.00)
 	$Sprite.texture = u_data.texture
+	$Sprite.scale = Vector2(power, power)
+	$CollisionShape2D.scale = Vector2(power, power)
 	
 func _physics_process(delta):
-	if delta < 0.016: return
 	velocity = Vector2.ZERO
 	velocity = global_position.direction_to(player.position) * u_data.speed
 	if knock_back && u_data.knockbackable:
@@ -41,6 +55,7 @@ func dead():
 	var new_gem = gem.instance()
 	new_gem.xp = max_hp + u_data.speed
 	new_gem.global_position = global_position
+	new_gem.get_node("Sprite").scale = Vector2(power - 0.3, power - 0.3)
 	get_parent().get_parent().get_node("Gems").add_child(new_gem)
 	
 	#Score
