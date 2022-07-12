@@ -192,4 +192,12 @@
         "duration": 800,
         "delay": 20
     }
+    ,
+    {
+        "start": 720,
+        "type": "recurring",
+        "enemy": "death.tres",
+        "duration": 9999,
+        "delay": 10
+    }
 ]

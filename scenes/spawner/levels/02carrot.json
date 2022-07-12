@@ -157,5 +157,12 @@
         "enemy": "carrot_heavy.tres",
         "duration": 1000,
         "delay": 1
+    } ,
+    {
+        "start": 720,
+        "type": "recurring",
+        "enemy": "death.tres",
+        "duration": 9999,
+        "delay": 10
     }
 ]

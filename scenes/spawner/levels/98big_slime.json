@@ -34,7 +34,14 @@
         "start": 80,
         "type": "recurring",
         "enemy": "slime_fast.tres",
-        "duration": 1000,
+        "duration": 9999,
         "delay": 1
+    },
+    {
+        "start": 720,
+        "type": "recurring",
+        "enemy": "death.tres",
+        "duration": 9999,
+        "delay": 10
     }
 ]
