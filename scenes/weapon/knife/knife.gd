@@ -34,6 +34,7 @@ func _process(delta):
 		var offset = player_prev_pos - player.global_position
 		global_position = global_position  + (dir * speed * delta) + offset
 	else:
+		damage = get_parent().damage
 		reset = false
 		$Timer.start()
 		dir = last_dir
@@ -47,7 +48,10 @@ func _process(delta):
 		
 func _on_Area2D_body_entered(body):
 	if body.has_method("take_damage"):
-		body.take_damage(damage)
+		if damage > 0 :
+			body.take_damage(damage)
+			#-1 damage per penetration
+			damage = clamp(damage - 1, 0, 9999)
 
 func _on_Timer_timeout():
 	reset = true
