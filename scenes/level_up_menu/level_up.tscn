@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/level_up_menu/level_up.gd" type="Script" id=1]
 [ext_resource path="res://global_resources/Poppins-Black.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://global_resources/basic_panel.tres" type="StyleBox" id=3]
+[ext_resource path="res://global_resources/pop.mp3" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -24,30 +26,44 @@ margin_right = 88.0
 margin_bottom = 84.0
 
 [node name="VB" type="VBoxContainer" parent="MC"]
-margin_left = 41.0
-margin_top = 36.0
-margin_right = 134.0
-margin_bottom = 131.0
+margin_top = 5.0
+margin_right = 200.0
+margin_bottom = 163.0
 
 [node name="O1" type="Button" parent="MC/VB"]
-margin_right = 93.0
-margin_bottom = 29.0
+margin_right = 200.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 200, 50 )
 custom_fonts/font = SubResource( 1 )
+custom_styles/hover = ExtResource( 3 )
 text = "OPTION 1"
 
 [node name="O2" type="Button" parent="MC/VB"]
-margin_top = 33.0
-margin_right = 93.0
-margin_bottom = 62.0
+margin_top = 54.0
+margin_right = 200.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 200, 50 )
 custom_fonts/font = SubResource( 2 )
+custom_styles/hover = ExtResource( 3 )
 text = "OPTION 2"
 
 [node name="O3" type="Button" parent="MC/VB"]
-margin_top = 66.0
-margin_right = 93.0
-margin_bottom = 95.0
+margin_top = 108.0
+margin_right = 200.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 200, 50 )
 custom_fonts/font = SubResource( 2 )
+custom_styles/hover = ExtResource( 3 )
 text = "OPTION 3"
+
+[node name="up" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+pitch_scale = 0.5
+
+[node name="pick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -10.78
+pitch_scale = 3.6
 
 [connection signal="pressed" from="MC/VB/O1" to="." method="_on_O1_pressed"]
 [connection signal="pressed" from="MC/VB/O2" to="." method="_on_O2_pressed"]

@@ -70,6 +70,7 @@ func level_up():
 	player_level += 1
 	xp_to_level = calc_xp_to_lvl()
 	$XP/CC/PBXP.max_value = xp_to_level
+	$LevelUp/up.play()
 	$LevelUp/MC.visible = true
 	$LevelUp.roll_upgrades()
 	get_tree().paused = true
@@ -98,3 +99,7 @@ func _on_Invincible_pressed():
 		child.queue_free()
 	for child in $Shurikens.get_children():
 		child.queue_free()
+
+
+func _on_DebugLevelUp_pressed():
+	level_up()

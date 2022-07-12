@@ -117,6 +117,6 @@ margin_right = -181.0
 margin_bottom = 15.0
 text = "Death"
 
-[connection signal="pressed" from="DebugLevelUp" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="DebugLevelUp" to="." method="_on_DebugLevelUp_pressed"]
 [connection signal="pressed" from="Invincible" to="." method="_on_Invincible_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

@@ -22,12 +22,15 @@ func roll_upgrades():
 	$MC/VB/O3.text = choice[2]
 	
 func _on_O1_pressed():
+	$pick.play()
 	do_upgrade(0)
 
 func _on_O2_pressed():
+	$pick.play()
 	do_upgrade(1)
 
 func _on_O3_pressed():
+	$pick.play()
 	do_upgrade(2)
 
 func do_upgrade(which: int):
