@@ -2,7 +2,7 @@ extends Node2D
 
 onready var shur_scn = load("res://scenes/weapon/shuriken/shuriken.tscn")
 
-var damage = 7
+var damage = 5
 var rot_speed = 1.5
 var spin_range = 55
 

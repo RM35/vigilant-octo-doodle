@@ -2,7 +2,7 @@ extends Node2D
 
 onready var orb_scn = load("res://scenes/weapon/orb/orb.tscn")
 
-var damage = 5
+var damage = 2
 var speed = 180
 
 #Rebalancing

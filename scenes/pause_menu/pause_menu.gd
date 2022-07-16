@@ -31,4 +31,6 @@ func update_stats():
 	sp.text += "Sping Range: " + str(player.get_node("Shurikens").spin_range) + "\n\n"
 	sp.text += "Knife:\n"
 	sp.text += "Damage: " + str(player.get_node("Knives").damage) + "\n"
-	sp.text += "Speed: " + str(player.get_node("Knives").speed) + "\n"
+	sp.text += "Speed: " + str(player.get_node("Knives").speed) + "\n\n"
+	sp.text += "Orb:\n"
+	sp.text += "Damage: " + str(player.get_node("Orbs").damage) + "\n"
