@@ -57,7 +57,7 @@ func dead():
 	var new_gem = gem.instance()
 	new_gem.xp = max_hp + u_data.speed
 	new_gem.global_position = global_position
-	new_gem.get_node("Sprite").scale = Vector2(power - 0.3, power - 0.3)
+	new_gem.get_node("Sprite").scale = Vector2(power - 0.3, power - 0.3) * 0.5
 	get_parent().get_parent().get_node("Gems").add_child(new_gem)
 	
 	#Score

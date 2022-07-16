@@ -7,7 +7,7 @@
 resource_local_to_scene = true
 script = ExtResource( 1 )
 speed = 35
-health = 20
+health = 10
 texture = ExtResource( 2 )
 knockbackable = true
 knockback_amount = -20

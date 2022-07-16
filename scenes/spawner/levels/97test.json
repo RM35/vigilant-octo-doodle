@@ -1,9 +1,0 @@
-[
-    {
-        "start": 0,
-        "type": "recurring",
-        "enemy": "carrot.tres",
-        "duration": 10,
-        "delay": 0.1
-    }
-]

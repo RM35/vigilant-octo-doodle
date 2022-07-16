@@ -1,0 +1,156 @@
+[
+    {
+        "start": 0,
+        "type": "recurring",
+        "enemy": "carrot.tres",
+        "duration": 100,
+        "delay": 2
+    },
+    {
+        "start": 14,
+        "type": "recurring",
+        "enemy": "corgi.tres",
+        "duration": 120,
+        "delay": 6
+    },
+    {
+        "start": 56,
+        "type": "recurring",
+        "enemy": "ghost.tres",
+        "duration": 120,
+        "delay": 4
+    },
+    {
+        "start": 94,
+        "type": "recurring",
+        "enemy": "slime.tres",
+        "duration": 120,
+        "delay": 6
+    },
+    {
+        "start": 136,
+        "type": "recurring",
+        "enemy": "eye.tres",
+        "duration": 120,
+        "delay": 4
+    },
+    {
+        "start": 180,
+        "type": "recurring",
+        "enemy": "skel.tres",
+        "duration": 120,
+        "delay": 1
+    },
+    {
+        "start": 220,
+        "type": "recurring",
+        "enemy": "pix.tres",
+        "duration": 120,
+        "delay": 2
+    },
+    {
+        "start": 254,
+        "type": "recurring",
+        "enemy": "sassy.tres",
+        "duration": 80,
+        "delay": 6
+    },
+    {
+        "start": 294,
+        "type": "recurring",
+        "enemy": "dan.tres",
+        "duration": 40,
+        "delay": 6
+    },
+    {
+        "start": 340,
+        "type": "recurring",
+        "enemy": "carrot.tres",
+        "duration": 80,
+        "delay": 2
+    },
+    {
+        "start": 334,
+        "type": "recurring",
+        "enemy": "corgi.tres",
+        "duration": 120,
+        "delay": 6
+    },
+    {
+        "start": 336,
+        "type": "recurring",
+        "enemy": "ghost.tres",
+        "duration": 160,
+        "delay": 4
+    },
+    {
+        "start": 336,
+        "type": "recurring",
+        "enemy": "slime.tres",
+        "duration": 200,
+        "delay": 6
+    },
+    {
+        "start": 376,
+        "type": "recurring",
+        "enemy": "eye.tres",
+        "duration": 220,
+        "delay": 4
+    },
+    {
+        "start": 420,
+        "type": "recurring",
+        "enemy": "skel.tres",
+        "duration": 180,
+        "delay": 1
+    },
+    {
+        "start": 460,
+        "type": "recurring",
+        "enemy": "pix.tres",
+        "duration": 140,
+        "delay": 2
+    },
+    {
+        "start": 494,
+        "type": "recurring",
+        "enemy": "sassy.tres",
+        "duration": 100,
+        "delay": 6
+    },
+    {
+        "start": 534,
+        "type": "recurring",
+        "enemy": "dan.tres",
+        "duration": 60,
+        "delay": 6
+    },
+    {
+        "start": 580,
+        "type": "recurring",
+        "enemy": "carrot.tres",
+        "duration": 20,
+        "delay": 2
+    },
+    {
+        "start": 574,
+        "type": "recurring",
+        "enemy": "corgi.tres",
+        "duration": 20,
+        "delay": 6
+    },
+    {
+        "start": 576,
+        "type": "recurring",
+        "enemy": "ghost.tres",
+        "duration": 20,
+        "delay": 4
+    },
+    {
+        "start": 574,
+        "type": "recurring",
+        "enemy": "slime.tres",
+        "duration": 20,
+        "delay": 6
+    }
+]

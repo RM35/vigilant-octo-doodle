@@ -1,13 +1,13 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://scenes/enemy/enemy_stats.gd" type="Script" id=1]
-[ext_resource path="res://scenes/enemy/textures/corgi_dark.png" type="Texture" id=2]
+[ext_resource path="res://scenes/enemy/textures/skinny_skell.png" type="Texture" id=2]
 
 [resource]
 resource_local_to_scene = true
 script = ExtResource( 1 )
-speed = 35
-health = 20
+speed = 45
+health = 10
 texture = ExtResource( 2 )
 knockbackable = true
 knockback_amount = -20
