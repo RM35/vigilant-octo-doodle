@@ -18,7 +18,6 @@ func _process(delta):
 		if total_delta > rebal_delay:
 			if len(knife_array) > 0:
 				knife_array.pop_front().get_node("Timer").start()
-				print("Started " + str(total_delta))
 			else:
 				rebalancing = false
 			total_delta = 0
