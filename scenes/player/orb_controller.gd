@@ -2,17 +2,14 @@ extends Node2D
 
 onready var orb_scn = load("res://scenes/weapon/orb/orb.tscn")
 
-var damage = 0
-var speed = 250
+var damage = 5
+var speed = 180
 
 #Rebalancing
 var total_delta = 0.0
 var rebalancing = false
 var orb_array = []
 var rebal_delay = 0.0
-
-func _ready():
-	add_orb()
 	
 #Rebalancing within process as timers do not have enough granularity
 func _process(delta):
@@ -21,7 +18,6 @@ func _process(delta):
 		if total_delta > rebal_delay:
 			if len(orb_array) > 0:
 				orb_array.pop_front().get_node("Timer").start()
-				print("Started " + str(total_delta))
 			else:
 				rebalancing = false
 			total_delta = 0

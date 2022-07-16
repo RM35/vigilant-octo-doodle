@@ -15,10 +15,13 @@ var rng = RandomNumberGenerator.new()
 
 func _ready():
 	rng.randomize()
-	if rng.randi_range(0, 1) == 1:
+	var select = rng.randi_range(0, 2)
+	if select == 0:
 		$Knives.add_knife()
-	else:
+	elif select == 1:
 		$Shurikens.add_shuriken()
+	elif select == 2:
+		$Orbs.add_orb()
 		
 func calc_xp_to_lvl():
 	return 150 + (pow((player_level / 2), 2) * xp_growth_rate)

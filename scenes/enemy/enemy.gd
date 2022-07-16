@@ -10,6 +10,7 @@ var knock_back = false
 var max_hp
 var age = 0.0
 var power
+var dead = false
 
 func _process(delta):
 	$Label.text = str(power)
@@ -50,6 +51,7 @@ func handle_collisions():
 			pass
 
 func dead():
+	dead = true
 	yield($AudioStreamPlayer2D, "finished")
 	yield($Hitnum.get_node("Tween"), "tween_completed")
 	var new_gem = gem.instance()
