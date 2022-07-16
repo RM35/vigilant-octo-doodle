@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/carot_heavy.png-2283942249fd5336baef0a49fb9b0756.stex"
+path="res://.import/carot_heavy.png-3688d2a63be33b585231ee1d4e259f37.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/enemy/textures/carot_heavy.png"
-dest_files=[ "res://.import/carot_heavy.png-2283942249fd5336baef0a49fb9b0756.stex" ]
+source_file="res://Scenes/enemy/textures/carot_heavy.png"
+dest_files=[ "res://.import/carot_heavy.png-3688d2a63be33b585231ee1d4e259f37.stex" ]
 
 [params]
 

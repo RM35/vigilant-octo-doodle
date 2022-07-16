@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/player/texture/player.png" type="Texture" id=1]
 [ext_resource path="res://scenes/player/player.gd" type="Script" id=2]
 [ext_resource path="res://scenes/player/hpbar_theme.tres" type="Theme" id=3]
+[ext_resource path="res://scenes/player/orb_controller.gd" type="Script" id=4]
 [ext_resource path="res://scenes/player/xpbar_theme.tres" type="Theme" id=5]
 [ext_resource path="res://scenes/level_up_menu/level_up.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/player/knife_controller.gd" type="Script" id=8]
@@ -91,13 +92,15 @@ script = ExtResource( 8 )
 [node name="Shurikens" type="Node2D" parent="."]
 script = ExtResource( 9 )
 
+[node name="Orbs" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
 [node name="LevelUp" parent="." instance=ExtResource( 7 )]
 pause_mode = 2
 
 [node name="DeathMenu" parent="." instance=ExtResource( 10 )]
 
 [node name="DebugLevelUp" type="Button" parent="."]
-visible = false
 margin_left = -216.0
 margin_top = -54.0
 margin_right = -94.0
@@ -105,7 +108,6 @@ margin_bottom = -34.0
 text = "DEBUG: Level Up"
 
 [node name="Invincible" type="Button" parent="."]
-visible = false
 margin_left = -216.0
 margin_top = -30.0
 margin_right = -94.0
@@ -113,7 +115,6 @@ margin_bottom = -10.0
 text = "HACKER"
 
 [node name="Button" type="Button" parent="."]
-visible = false
 margin_left = -217.0
 margin_top = -5.0
 margin_right = -181.0

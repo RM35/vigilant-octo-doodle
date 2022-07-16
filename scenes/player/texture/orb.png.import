@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/carot_med.png-120801df8b6be9dd9a4d82b956f429c3.stex"
+path="res://.import/orb.png-ed9e241b04f94a22f79a0286bba47667.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/enemy/textures/carot_med.png"
-dest_files=[ "res://.import/carot_med.png-120801df8b6be9dd9a4d82b956f429c3.stex" ]
+source_file="res://scenes/player/texture/orb.png"
+dest_files=[ "res://.import/orb.png-ed9e241b04f94a22f79a0286bba47667.stex" ]
 
 [params]
 
