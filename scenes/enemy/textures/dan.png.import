@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dan.png-7cadcdab52d89c9a90d5adf6a83a0097.stex"
+path="res://.import/dan.png-03f19b9ced2d58e448ffe90c0fec4da4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/enemy/textures/dan.png"
-dest_files=[ "res://.import/dan.png-7cadcdab52d89c9a90d5adf6a83a0097.stex" ]
+source_file="res://scenes/enemy/textures/dan.png"
+dest_files=[ "res://.import/dan.png-03f19b9ced2d58e448ffe90c0fec4da4.stex" ]
 
 [params]
 

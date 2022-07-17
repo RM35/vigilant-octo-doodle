@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/death.png-a9ea28be7caf6a9e4150456a41f31092.stex"
+path="res://.import/death.png-2165bfed6ab7a2bd19cfe0d6c11e1b8e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/enemy/textures/death.png"
-dest_files=[ "res://.import/death.png-a9ea28be7caf6a9e4150456a41f31092.stex" ]
+source_file="res://scenes/enemy/textures/death.png"
+dest_files=[ "res://.import/death.png-2165bfed6ab7a2bd19cfe0d6c11e1b8e.stex" ]
 
 [params]
 

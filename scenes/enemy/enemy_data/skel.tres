@@ -6,9 +6,10 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource( 1 )
-speed = 45
+speed = 80
 health = 10
 texture = ExtResource( 2 )
+death = false
 knockbackable = true
 knockback_amount = -20
 sprite_scale = Vector2( 1, 1 )

@@ -38,7 +38,7 @@ func _process(delta):
 	
 # Level info parsing and spawing
 func _on_Timer_timeout():
-	elapsed_time += $Timer.wait_time + 5
+	elapsed_time += $Timer.wait_time
 	if len(level) - 1 < level_stage: return
 	if elapsed_time > level[level_stage]['start']:
 		if level[level_stage]['type'] == "recurring":

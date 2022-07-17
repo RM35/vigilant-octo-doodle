@@ -9,6 +9,7 @@ script = ExtResource( 1 )
 speed = 55
 health = 25
 texture = ExtResource( 2 )
+death = false
 knockbackable = true
 knockback_amount = -20
 sprite_scale = Vector2( 0.6, 0.6 )

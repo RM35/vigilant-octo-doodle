@@ -28,6 +28,12 @@
         "delay": 6
     },
     {
+        "start": 100,
+        "type": "oneshot",
+        "enemy": "carrot.tres",
+        "amount": 40
+    },
+    {
         "start": 136,
         "type": "recurring",
         "enemy": "eye.tres",
@@ -40,6 +46,12 @@
         "enemy": "skel.tres",
         "duration": 120,
         "delay": 1
+    },
+    {
+        "start": 200,
+        "type": "oneshot",
+        "enemy": "eye.tres",
+        "amount": 40
     },
     {
         "start": 220,
@@ -61,6 +73,12 @@
         "enemy": "dan.tres",
         "duration": 40,
         "delay": 6
+    },
+    {
+        "start": 300,
+        "type": "oneshot",
+        "enemy": "pix.tres",
+        "amount": 40
     },
     {
         "start": 340,
@@ -98,6 +116,12 @@
         "delay": 4
     },
     {
+        "start": 400,
+        "type": "oneshot",
+        "enemy": "dan.tres",
+        "amount": 40
+    },
+    {
         "start": 420,
         "type": "recurring",
         "enemy": "skel.tres",
@@ -117,6 +141,18 @@
         "enemy": "sassy.tres",
         "duration": 100,
         "delay": 6
+    },
+    {
+        "start": 500,
+        "type": "oneshot",
+        "enemy": "skel.tres",
+        "amount": 40
+    },
+    {
+        "start": 500,
+        "type": "oneshot",
+        "enemy": "sassy.tres",
+        "amount": 40
     },
     {
         "start": 534,
@@ -152,5 +188,12 @@
         "enemy": "slime.tres",
         "duration": 20,
         "delay": 6
+    },
+    {
+        "start": 600,
+        "type": "recurring",
+        "enemy": "death.tres",
+        "duration": 9999,
+        "delay": 10
     }
 ]

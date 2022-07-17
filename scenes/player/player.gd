@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const ACCELERATION = 2000
-var MAX_SPEED = 95
+var MAX_SPEED = 90
 
 var motion = Vector2.ZERO
 var health = 100
@@ -10,6 +10,7 @@ var player_level = 0
 var xp_growth_rate = 130
 onready var xp_to_level = calc_xp_to_lvl()
 var invincible = false
+var current_attackers = []
 
 var rng = RandomNumberGenerator.new()
 
@@ -37,7 +38,6 @@ func _physics_process(delta):
 	else:
 		apply_movement(axis * ACCELERATION * delta)
 	motion = move_and_slide(motion)
-	handle_collisions()
 
 func get_input_axis():
 	var axis = Vector2.ZERO
@@ -55,18 +55,10 @@ func apply_movement(acceleration):
 	motion += acceleration
 	motion = motion.clamped(MAX_SPEED)
 
+
 func _process(delta):
 	$Health/CC/PBHP.value = health
 	$XP/CC/PBXP.value = xp
-
-func handle_collisions():
-	for i in get_slide_count():
-		var collision = get_slide_collision(i)
-		var body = collision.get_collider()
-		if body.is_in_group("enemy") && !invincible:
-			health -= 1
-			if health <= 0:
-				end_level()
 
 func level_up():
 	xp = 0
@@ -107,3 +99,25 @@ func _on_Invincible_pressed():
 
 func _on_DebugLevelUp_pressed():
 	level_up()
+
+func player_take_damage(body):
+	if !invincible:
+		if body.u_data.death:
+			end_level()
+		health -= 10
+		if health <= 0:
+			end_level()
+
+func _on_Area2D_body_entered(body):
+	if body.is_in_group("enemy"):
+		current_attackers.append(body)
+
+func _on_Area2D_body_exited(body):
+	if body in current_attackers:
+		current_attackers.pop_at(current_attackers.find(body))
+
+
+func _on_DamageTicks_timeout():
+	if len(current_attackers) > 0:
+		for body in current_attackers:
+			player_take_damage(body)

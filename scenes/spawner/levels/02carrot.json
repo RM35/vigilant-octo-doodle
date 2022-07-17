@@ -159,7 +159,7 @@
         "delay": 1
     } ,
     {
-        "start": 720,
+        "start": 600,
         "type": "recurring",
         "enemy": "death.tres",
         "duration": 9999,

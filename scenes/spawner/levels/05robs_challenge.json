@@ -1,0 +1,119 @@
+[
+    {
+        "start": 0,
+        "type": "recurring",
+        "enemy": "pix_challenge.tres",
+        "duration": 60,
+        "delay": 1
+    },
+    {
+        "start": 15,
+        "type": "recurring",
+        "enemy": "death_challenge.tres",
+        "duration": 580,
+        "delay": 15
+    },
+    {
+        "start": 60,
+        "type": "oneshot",
+        "enemy": "pix_challenge.tres",
+        "amount": 40
+    },
+    {
+        "start": 90,
+        "type": "recurring",
+        "enemy": "pix_challenge.tres",
+        "duration": 60,
+        "delay": 1
+    },
+    {
+        "start": 120,
+        "type": "oneshot",
+        "enemy": "knife_challenge.tres",
+        "amount": 40
+    },
+    {
+        "start": 90,
+        "type": "recurring",
+        "enemy": "knife_challenge.tres",
+        "duration": 60,
+        "delay": 4
+    },
+    {
+        "start": 120,
+        "type": "recurring",
+        "enemy": "knife_challenge.tres",
+        "duration": 60,
+        "delay": 4
+    },
+    {
+        "start": 180,
+        "type": "recurring",
+        "enemy": "eye_challenge.tres",
+        "duration": 60,
+        "delay": 2
+    },
+    {
+        "start": 185,
+        "type": "recurring",
+        "enemy": "pix_challenge.tres",
+        "duration": 415,
+        "delay": 10
+    },
+    {
+        "start": 210,
+        "type": "oneshot",
+        "enemy": "eye_challenge.tres",
+        "amount": 40
+    },
+    {
+        "start": 270,
+        "type": "oneshot",
+        "enemy": "slime_challenge.tres",
+        "amount": 40
+    },
+    {
+        "start": 275,
+        "type": "recurring",
+        "enemy": "slime_challenge.tres",
+        "duration": 325,
+        "delay": 5
+    },
+    {
+        "start": 390,
+        "type": "oneshot",
+        "enemy": "skel_challenge.tres",
+        "amount": 40
+    },
+    {
+        "start": 392,
+        "type": "recurring",
+        "enemy": "skel_challenge.tres",
+        "duration": 208,
+        "delay": 12
+    },
+    {
+        "start": 510,
+        "type": "oneshot",
+        "enemy": "skel_challenge.tres",
+        "amount": 12
+    },
+    {
+        "start": 511,
+        "type": "oneshot",
+        "enemy": "slime_challenge.tres",
+        "amount": 12
+    },
+    {
+        "start": 512,
+        "type": "oneshot",
+        "enemy": "eye_challenge.tres",
+        "amount": 4
+    },
+    {
+        "start": 600,
+        "type": "oneshot",
+        "enemy": "death.tres",
+        "amount": 4
+    }
+]

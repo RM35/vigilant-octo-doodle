@@ -33,14 +33,15 @@ func set_enemy_type(unit_data: String):
 	$CollisionShape2D.scale = Vector2(power, power)
 	
 func _physics_process(delta):
-	velocity = Vector2.ZERO
-	velocity = global_position.direction_to(player.position) * u_data.speed
-	if knock_back && u_data.knockbackable:
-		move_and_slide(u_data.knockback_amount * velocity)
-		knock_back = false
-	else:
-		move_and_slide(velocity)
-		handle_collisions()
+	if !dead:
+		velocity = Vector2.ZERO
+		velocity = global_position.direction_to(player.position) * u_data.speed
+		if knock_back && u_data.knockbackable:
+			move_and_slide(u_data.knockback_amount * velocity)
+			knock_back = false
+		else:
+			move_and_slide(velocity)
+			handle_collisions()
 	
 #Body collisions only
 func handle_collisions():
@@ -52,6 +53,9 @@ func handle_collisions():
 
 func dead():
 	dead = true
+	set_collision_layer_bit(0, false)
+	set_collision_layer_bit(1, false)
+	set_collision_mask_bit(0, false)
 	yield($AudioStreamPlayer2D, "finished")
 	yield($Hitnum.get_node("Tween"), "tween_completed")
 	var new_gem = gem.instance()

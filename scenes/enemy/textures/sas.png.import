@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sas.png-b7e01f27e1ceb4a96d2c2517bf3434dd.stex"
+path="res://.import/sas.png-b182fe80fb20e34d98ab7f2161e180cb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/enemy/textures/sas.png"
-dest_files=[ "res://.import/sas.png-b7e01f27e1ceb4a96d2c2517bf3434dd.stex" ]
+source_file="res://scenes/enemy/textures/sas.png"
+dest_files=[ "res://.import/sas.png-b182fe80fb20e34d98ab7f2161e180cb.stex" ]
 
 [params]
 

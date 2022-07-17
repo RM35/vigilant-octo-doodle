@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://global_resources/basic_panel.tres" type="StyleBox" id=1]
-[ext_resource path="res://Scenes/death_menu/death_menu.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/firebase/firebase.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/death_menu/death_menu.gd" type="Script" id=2]
+[ext_resource path="res://scenes/firebase/firebase.tscn" type="PackedScene" id=3]
 [ext_resource path="res://global_resources/Poppins-Black.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]

@@ -1,15 +1,15 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://scenes/enemy/enemy_stats.gd" type="Script" id=1]
-[ext_resource path="res://scenes/enemy/textures/slimer.png" type="Texture" id=2]
+[ext_resource path="res://scenes/enemy/textures/pixie.png" type="Texture" id=2]
 
 [resource]
 resource_local_to_scene = true
 script = ExtResource( 1 )
-speed = 68
-health = 35
+speed = 90
+health = 1
 texture = ExtResource( 2 )
 death = false
-knockbackable = true
+knockbackable = false
 knockback_amount = -20
-sprite_scale = Vector2( 0.8, 0.8 )
+sprite_scale = Vector2( 1, 1 )

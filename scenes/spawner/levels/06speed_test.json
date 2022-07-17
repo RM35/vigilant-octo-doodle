@@ -1,0 +1,8 @@
+[
+    {
+        "start": 0,
+        "type": "oneshot",
+        "enemy": "carrot.tres",
+        "amount": 1
+    }
+]

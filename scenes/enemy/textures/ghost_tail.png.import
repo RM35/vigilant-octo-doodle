@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ghost_tail.png-a10d8cb2eed6487741aeeb8eaf800443.stex"
+path="res://.import/ghost_tail.png-0a911c63567e26888c786032c2a00ce0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/enemy/textures/ghost_tail.png"
-dest_files=[ "res://.import/ghost_tail.png-a10d8cb2eed6487741aeeb8eaf800443.stex" ]
+source_file="res://scenes/enemy/textures/ghost_tail.png"
+dest_files=[ "res://.import/ghost_tail.png-0a911c63567e26888c786032c2a00ce0.stex" ]
 
 [params]
 

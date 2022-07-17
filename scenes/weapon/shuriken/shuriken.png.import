@@ -9,7 +9,7 @@ metadata={
 
 [deps]
 
-source_file="res://Scenes/weapon/shuriken/shuriken.png"
+source_file="res://scenes/weapon/shuriken/shuriken.png"
 dest_files=[ "res://.import/shuriken.png-ced87574ec4a7f585251070f9e4b358f.stex" ]
 
 [params]

@@ -37,7 +37,7 @@ func _process(delta):
 	player_prev_pos = player.global_position
 		
 func _on_Area2D_body_entered(body):
-	if body.has_method("take_damage"):
+	if body.has_method("take_damage") && visible:
 		if damage > 0 :
 			body.take_damage(damage)
 			#-1 damage per penetration
